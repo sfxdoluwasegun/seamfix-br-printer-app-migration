@@ -1,0 +1,76 @@
+.jfx-button {
+    -fx-background-color: #00bcd4;
+}
+
+.metadata-container .label {
+    -fx-text-fill: white;
+}
+
+.jfx-check-box {
+    -jfx-checked-color: #58acdd;
+}
+.jfx-text-area {
+    -jfx-focus-color: #58acdd;
+}
+.jfx-radio-button {
+    -jfx-selected-color: #58acdd;
+}
+
+.jfx-tab-pane .tab-header-area .tab-selected-line {
+    -fx-stroke: #ffffff;
+}
+
+.jfx-date-picker {
+    -jfx-default-color: #58acdd;
+}
+
+.jfx-combo-box {
+    -jfx-focus-color: #58acdd;
+}
+
+.jfx-text-field {
+    -jfx-focus-color: #58acdd;
+}
+
+.jfx-password-field {
+    -jfx-focus-color: #58acdd;
+}
+
+.login-container {
+    -fx-background-color: white;
+}
+
+.login-container .jfx-button {
+    -fx-background-color: #58acdd;
+}
+
+.vbox-single-control {
+    -fx-border-color: lightgrey;
+    -fx-border-radius: 5px;
+}
+
+
+.btn-primary {
+    -fx-background-color: #58acdd;
+    -fx-text-fill: white;
+}
+
+.btn-transparent-primary {
+    -fx-font-size: 25;
+    -fx-text-fill: white;
+}
+
+.btn-danger {
+    -fx-background-color: red;
+    -fx-text-fill: white;
+}
+
+.setting-card {
+    -fx-border-color: #eee;
+    -fx-border-radius: 3px;
+    -fx-background-color: #fff;
+    -fx-background-radius: 3px;
+    -fx-opacity: 0.85
+}
+
+

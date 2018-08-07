@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<?import javafx.scene.layout.AnchorPane?>
+<BorderPane prefHeight="200.0" prefWidth="350.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.111"
+            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seamfix.brprinterapp.controller.SignInController">
+    <top>
+        <Label BorderPane.alignment="CENTER" fx:id="lblSignIn" alignment="CENTER" wrapText="true" text="%LoginStage.lblSignInInstruction.text">
+        <BorderPane.margin>
+            <Insets top="20.0"/>
+        </BorderPane.margin>
+        </Label>
+    </top>
+    <bottom>
+        <HBox BorderPane.alignment="CENTER">
+            <children>
+                <Label fx:id="lblVendor" alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="143.0"
+                       text="%LoginStage.lblPoweredBy.text"/>
+                <Region prefHeight="0.0" prefWidth="174.0"/>
+
+                <Label fx:id="lblVersion"/>
+
+            </children>
+            <BorderPane.margin>
+                <Insets top="5.0"/>
+            </BorderPane.margin>
+        </HBox>
+    </bottom>
+    <center>
+        <VBox fx:id="vboxLogin" spacing="10.0" BorderPane.alignment="CENTER">
+            <children>
+                <HBox>
+                    <children>
+                        <Label fx:id="lblEmail" prefHeight="25.0" prefWidth="60"
+                               text="%LoginStage.txtEmail.promptText"/>
+                        <JFXTextField fx:id="txtUsername" prefHeight="25.0" prefWidth="222.0"/>
+                    </children>
+                </HBox>
+                <HBox>
+                    <children>
+                        <Label fx:id="lblPassword" prefHeight="25.0" prefWidth="60"
+                               text="Password"/>
+                        <JFXPasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="222.0"/>
+                    </children>
+                </HBox>
+
+                <JFXCheckBox fx:id="toRememberBox" prefHeight="17.0" prefWidth="150.0" selected="true"
+                             text="Remember Me">
+                    <VBox.margin>
+                        <Insets left="-10.0" top="10.0"/>
+                    </VBox.margin>
+                </JFXCheckBox>
+                <AnchorPane>
+                    <children>
+                        <HBox spacing="0.0" AnchorPane.rightAnchor="0.0">
+                            <children>
+                                <JFXButton fx:id="btnSignIn" defaultButton="true"
+                                           style="-fx-background-color: #58acdd; -fx-text-fill: white" mnemonicParsing="false"
+                                           prefHeight="25.0" prefWidth="75.0" text="%LoginStage.btnSignIn.text"/>
+                                <!--<ImageView fx:id="imgStatus" fitHeight="25.0" fitWidth="43.0" pickOnBounds="true"-->
+                                           <!--preserveRatio="true"/>-->
+                            </children>
+                        </HBox>
+                    </children>
+                </AnchorPane>
+
+            </children>
+            <padding>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+            </padding>
+            <BorderPane.margin>
+                <Insets left="25.0" top="25" right="25.0"/>
+            </BorderPane.margin>
+        </VBox>
+    </center>
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+    </padding>
+</BorderPane>
+
