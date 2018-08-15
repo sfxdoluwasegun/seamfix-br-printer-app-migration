@@ -11,7 +11,7 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.TextArea?>
-<BorderPane prefHeight="350.0" prefWidth="400.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.111"
+<BorderPane fx:id="root" prefHeight="350.0" prefWidth="400.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.111"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.seamfix.brprinterapp.controller.LandingPageController">
     <top>

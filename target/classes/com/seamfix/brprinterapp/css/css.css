@@ -40,8 +40,9 @@
     -fx-background-color: white;
 }
 
-.login-container .jfx-button {
+.jfx-button {
     -fx-background-color: #58acdd;
+    -fx-text-fill: white;
 }
 
 .vbox-single-control {

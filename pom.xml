@@ -204,8 +204,8 @@
                         <option>-keep class com.seamfix.brprinterapp.service.BioRegistraClient { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.App { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.utils.BrThrowableRenderer { *; }</option>
-                        <option>-keep public enum com.seamfix.bioregistra.** { *; }</option>
-                        <option>-keep class !com.seamfix.bioregistra.** { *; }</option>
+                        <option>-keep public enum com.seamfix.brprinterapp.** { *; }</option>
+                        <option>-keep class !com.seamfix.brprinterapp.** { *; }</option>
 
                         <option>-keepattributes *Annotation*</option>
                         <option>-keepattributes Signature</option>
@@ -503,7 +503,7 @@
 
         <filters>
             <filter>
-                ${project.basedir}/src/main/resources/com/seamfix/bioregistra/config/config-${build.profile.id}.properties
+                ${project.basedir}/src/main/resources/com/seamfix/brprinterapp/config/config-${build.profile.id}.properties
             </filter>
         </filters>
 

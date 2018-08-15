@@ -11,7 +11,7 @@ import java.io.Serializable;
  * Created by rukevwe on 8/7/2018
  */
 @MappedSuperclass
-public abstract class BaseEnitiy implements Serializable {
+public abstract class BaseEntity implements Serializable {
 
     @Id
     @GeneratedValue
