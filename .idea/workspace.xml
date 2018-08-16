@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a856c7e-02bb-461f-86d5-94f073c4ddc2" name="Default" comment="Added Image Files">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/img/application_icon-ico.ico" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/img/default-project-icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/EncryptionInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/EncryptionInterceptor.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/landing-page.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/landing-page.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/sign-in.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/sign-in.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -30,8 +18,8 @@
       <file leaf-file-name="SignInController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="182" column="29" lean-forward="false" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
+            <state relative-caret-position="751">
+              <caret line="194" column="87" lean-forward="false" selection-start-line="194" selection-start-column="87" selection-end-line="194" selection-end-column="87" />
               <folding />
             </state>
           </provider>
@@ -1029,7 +1017,7 @@
       <workItem from="1534328720377" duration="16261000" />
       <workItem from="1534396564296" duration="4070000" />
       <workItem from="1534405547247" duration="1534000" />
-      <workItem from="1534407201004" duration="11409000" />
+      <workItem from="1534407201004" duration="11563000" />
     </task>
     <task id="LOCAL-00001" summary="Consume Login Service">
       <created>1534329249748</created>
@@ -1059,11 +1047,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534414796835</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Added Image Files">
+      <created>1534423008113</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1534423008113</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="145085000" />
+    <option name="totallyTimeSpent" value="145239000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1562,8 +1557,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="182" column="29" lean-forward="false" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
+        <state relative-caret-position="751">
+          <caret line="194" column="87" lean-forward="false" selection-start-line="194" selection-start-column="87" selection-end-line="194" selection-end-column="87" />
           <folding />
         </state>
       </provider>
