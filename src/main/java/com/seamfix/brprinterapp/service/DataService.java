@@ -60,7 +60,7 @@ public class DataService {
             folder.mkdir();
             Files.setAttribute(folder.toPath(), "dos:hidden", true);
 
-            File dbFile = new File(folder, "biorprinter.fdb");
+            File dbFile = new File(folder, "bioprinter.fdb");
 
             String pathname = dbFile.getAbsolutePath();
             String username = AppConfig.getDbUser();
@@ -99,7 +99,7 @@ public class DataService {
             Criteria cr = sxn.createCriteria(clazz);
             cr.add(Restrictions.ilike(prop, value, MatchMode.EXACT));
             T t = (T) cr.uniqueResult();
-            tx.commit();
+            commit(tx);
             return t;
         } catch (Exception e) {
             rollback(tx);
@@ -118,7 +118,7 @@ public class DataService {
             tx = sxn.beginTransaction();
             Query q = sxn.createQuery(hql);
             List<T> list = q.list();
-            tx.commit();
+            commit(tx);
             return list;
         } catch (Exception e) {
             rollback(tx);
@@ -136,7 +136,7 @@ public class DataService {
             sxn = getSession();
             tx = sxn.beginTransaction();
             sxn.save(t);
-            tx.commit();
+            commit(tx);
             return true;
         } catch (Exception e) {
             rollback(tx);
@@ -154,7 +154,7 @@ public class DataService {
             sxn = getSession();
             tx = sxn.beginTransaction();
             sxn.saveOrUpdate(t);
-            tx.commit();
+            commit(tx);
         } catch (Exception exception) {
             rollback(tx);
             log.error("Error while updating", exception);
@@ -178,7 +178,7 @@ public class DataService {
                 }
             }
             T t = (T) cr.uniqueResult();
-            tx.commit();
+            commit(tx);
             return t;
         } catch (Exception e) {
             rollback(tx);
@@ -204,6 +204,12 @@ public class DataService {
             sxn.close();
         }
     }
+    public void commit(Transaction tx) {
+        if (tx != null) {
+            tx.commit();
+        }
+    }
+
 
     public Tag getTag() {
         List<Tag> listByHQL = getListByHQL("select t from Tag t");
@@ -214,6 +220,7 @@ public class DataService {
 
         return null;
     }
+
 
     public Config getConfigByKey(String key) {
         return getUniqueByProperty(Config.class, "configKey", crypter.encrypt(key));

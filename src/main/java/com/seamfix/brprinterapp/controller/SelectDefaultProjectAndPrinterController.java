@@ -13,6 +13,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
 import lombok.Getter;
+import org.apache.commons.lang3.StringUtils;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -35,16 +36,19 @@ public class SelectDefaultProjectAndPrinterController extends Controller {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
-        lblMessage.setText("Select default Project and Printer name to proceed");
-
         projectsCombo.setItems(FXCollections.observableList(new ArrayList<>(SessionUtils.getLoggedInUserProjects())));
     }
 
     public void performDefaultProjectSave(ActionEvent actionEvent) {
         selectedProject = projectsCombo.getValue();
+        String printerName = txtPrinterName.getText();
 
-        if (selectedProject == null) {
+        if (selectedProject == null ) {
             lblMessage.setText("Select a project");
+            return;
+        }
+        if (StringUtils.isBlank(printerName)) {
+            lblMessage.setText("Type in the printer name");
             return;
         }
         AppConfig.saveOrUpdate(CommonUtils.getPriProjectForLoggedInuserKey(), selectedProject.getPId());

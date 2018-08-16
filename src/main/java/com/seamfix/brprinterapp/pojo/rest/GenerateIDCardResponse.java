@@ -10,8 +10,7 @@ import java.util.ArrayList;
 @Setter
 public class GenerateIDCardResponse extends Response {
 
-    private String frontView;
-    private String backView;
+   private ArrayList<GenerateIDCard> cardList;
 
     public GenerateIDCardResponse(int code, String description) {
         super(code, description);

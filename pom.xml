@@ -43,7 +43,7 @@
                         <configuration>
                             <files>
                                 <file>
-                                    ${project.basedir}/src/main/resources/com/seamfix/bioregistra/config/version.properties
+                                    ${project.basedir}/src/main/resources/com/seamfix/brprinterapp/config/version.properties
                                 </file>
                             </files>
                         </configuration>
@@ -152,7 +152,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.seamfix.bioregistra.App</mainClass>
+                                    <mainClass>com.seamfix.brprinterapp.App</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
@@ -201,7 +201,7 @@
                         <option>-keep class com.seamfix.brprinterapp.pojo.** { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.model.** { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.controller.** { *; }</option>
-                        <option>-keep class com.seamfix.brprinterapp.service.BioRegistraClient { *; }</option>
+                        <option>-keep class com.seamfix.brprinterapp.service.BioPrinterClient { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.App { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.utils.BrThrowableRenderer { *; }</option>
                         <option>-keep public enum com.seamfix.brprinterapp.** { *; }</option>
@@ -468,7 +468,7 @@
                         </goals>
                         <configuration>
                             <icon>
-                                ${project.basedir}/src/main/resources/com/seamfix/bioregistra/img/application_icon-ico.ico
+                                ${project.basedir}/src/main/resources/com/seamfix/brprinterapp/img/application_icon-ico.ico
                             </icon>
                             <dontWrapJar>false</dontWrapJar>
                             <headerType>${launch4j.output.type}</headerType>
@@ -481,7 +481,7 @@
                                 http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
                             </downloadUrl>
                             <classPath>
-                                <mainClass>com.seamfix.bioregistra.App</mainClass>
+                                <mainClass>com.seamfix.brprinterapp.App</mainClass>
                                 <addDependencies>false</addDependencies>
                                 <preCp>${location.folder.name}/jni4net.j-0.8.6.0.jar</preCp>
                                 <!--<jarLocation>lib/</jarLocation>-->
@@ -492,7 +492,7 @@
                                 <minVersion>1.8.0</minVersion>
                             </jre>
                             <singleInstance>
-                                <mutexName>BioRegistra</mutexName>
+                                <mutexName>BioPrinter</mutexName>
                             </singleInstance>
                         </configuration>
                     </execution>

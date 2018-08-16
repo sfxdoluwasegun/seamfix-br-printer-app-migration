@@ -2,6 +2,7 @@ package com.seamfix.brprinterapp.service;
 
 import com.seamfix.brprinterapp.model.BioUser;
 import com.seamfix.brprinterapp.model.Project;
+import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardResponse;
 import com.seamfix.brprinterapp.pojo.rest.LoginResponse;
 import com.seamfix.brprinterapp.pojo.rest.TagResponse;
@@ -155,8 +156,8 @@ public class HttpClient {
         return response.isSuccessful() ? response.body() : new LoginResponse(response.code(), response.message());
     }
 
-    public GenerateIDCardResponse generateIDCard(String pId, String uniqueId) throws IOException {
-        Call<GenerateIDCardResponse> call = getClient(false).generateIDcard(pId, uniqueId);
+    public GenerateIDCardResponse generateIDCard(GenerateIDCardRequest generateIDCardRequest) throws IOException {
+        Call<GenerateIDCardResponse> call = getClient(false).generateIDcard(generateIDCardRequest);
         retrofit2.Response<GenerateIDCardResponse> response = call.execute();
         return response.isSuccessful() ? response.body() : new GenerateIDCardResponse(response.code(), response.message());
     }

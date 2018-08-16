@@ -46,7 +46,7 @@ public class AppConfig {
     private static Properties getCoreProps() {
         Properties prop = new Properties();
         try {
-            prop.load(AppConfig.class.getResourceAsStream("/com/seamfix/bioregistra/config/config-core.properties"));
+            prop.load(AppConfig.class.getResourceAsStream("/com/seamfix/brprinterapp/config/config-core.properties"));
         } catch (IOException e) {
             log.error("Error while loading core props", e);
         }
@@ -156,13 +156,16 @@ public class AppConfig {
         return (String) coreProps.get(key);
     }
 
+    public static String getAuthSeed() {
+        return getStegProp("auth.seed");
+    }
 
     public static int getFtpPort() {
         return Integer.parseInt(getStegProp("ftp.port." + getCurrentEnv()));
     }
 
     public static String getHttpIp() {
-        return getCoreProp("http:ip");
+        return getCoreProp("http.ip");
     }
 
     public static String getFtpIp() {

@@ -6,24 +6,22 @@
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.image.ImageView?>
-<BorderPane prefHeight="200.0" prefWidth="350.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seamfix.brprinterapp.controller.SignInController">
+<BorderPane prefHeight="200.0" prefWidth="350.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seamfix.brprinterapp.controller.SignInController">
     <top>
-        <VBox BorderPane.alignment="CENTER">
+        <VBox alignment="CENTER" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="lblSignIn" alignment="CENTER" wrapText="true" prefHeight="34.0"
-                       text="%LoginStage.lblSignInInstruction.text"/>
-                <Label fx:id="lblMessage" alignment="CENTER" wrapText="true" textAlignment="CENTER" prefHeight="34.0"/>
+                <Label fx:id="lblSignIn" alignment="CENTER" prefHeight="34.0" text="%LoginStage.lblSignInInstruction.text" textAlignment="JUSTIFY" wrapText="true" />
+                <Label fx:id="lblMessage" alignment="CENTER" prefHeight="34.0" textAlignment="CENTER" wrapText="true" />
             </children>
             <BorderPane.margin>
-                <Insets top="20.0"/>
+                <Insets top="5.0" />
             </BorderPane.margin>
         </VBox>
 
@@ -31,15 +29,14 @@
     <bottom>
         <HBox BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="lblVendor" alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="143.0"
-                       text="%LoginStage.lblPoweredBy.text"/>
-                <Region prefHeight="0.0" prefWidth="174.0"/>
+                <Label fx:id="lblVendor" alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="143.0" text="%LoginStage.lblPoweredBy.text" />
+                <Region prefHeight="0.0" prefWidth="174.0" />
 
-                <Label fx:id="lblVersion" prefHeight="23.0" maxHeight="-Infinity" maxWidth="-Infinity"/>
+                <Label fx:id="lblVersion" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" />
 
             </children>
             <BorderPane.margin>
-                <Insets top="5.0"/>
+                <Insets top="5.0" />
             </BorderPane.margin>
         </HBox>
     </bottom>
@@ -48,34 +45,28 @@
             <children>
                 <HBox>
                     <children>
-                        <Label fx:id="lblEmail" prefHeight="25.0" prefWidth="60"
-                               text="%LoginStage.txtEmail.promptText"/>
-                        <JFXTextField fx:id="txtUsername" prefHeight="25.0" prefWidth="222.0"/>
+                        <Label fx:id="lblEmail" prefHeight="25.0" prefWidth="60" text="%LoginStage.txtEmail.promptText" />
+                        <JFXTextField fx:id="txtUsername" prefHeight="25.0" prefWidth="222.0" />
                     </children>
                 </HBox>
                 <HBox>
                     <children>
-                        <Label fx:id="lblPassword" prefHeight="25.0" prefWidth="60"
-                               text="Password"/>
-                        <JFXPasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="222.0"/>
+                        <Label fx:id="lblPassword" prefHeight="25.0" prefWidth="60" text="Password" />
+                        <JFXPasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="222.0" />
                     </children>
                 </HBox>
 
-                <JFXCheckBox fx:id="toRememberBox" prefHeight="17.0" prefWidth="150.0" selected="true"
-                             text="Remember Me">
+                <JFXCheckBox fx:id="toRememberBox" prefHeight="17.0" prefWidth="150.0" selected="true" text="Remember Me">
                     <VBox.margin>
-                        <Insets left="-10.0" top="10.0"/>
+                        <Insets left="-10.0" top="10.0" />
                     </VBox.margin>
                 </JFXCheckBox>
                 <AnchorPane>
                     <children>
                         <HBox spacing="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
-                                <JFXButton fx:id="btnSignIn" defaultButton="true"
-                                           mnemonicParsing="false"
-                                           prefHeight="25.0" prefWidth="75.0" onAction="#performSignIn" text="%LoginStage.btnSignIn.text"/>
-                                <ImageView fx:id="imgStatus" fitHeight="25.0" fitWidth="43.0" pickOnBounds="true"
-                                           preserveRatio="true"/>
+                                <JFXButton fx:id="btnSignIn" defaultButton="true" mnemonicParsing="false" onAction="#performSignIn" prefHeight="25.0" prefWidth="75.0" text="%LoginStage.btnSignIn.text" />
+                                <ImageView fx:id="imgStatus" fitHeight="25.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true" />
                             </children>
                         </HBox>
                     </children>
@@ -83,15 +74,14 @@
 
             </children>
             <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                <Insets left="5.0" right="5.0" />
             </padding>
             <BorderPane.margin>
-                <Insets left="25.0" top="25" right="25.0"/>
+                <Insets left="25.0" right="25.0" />
             </BorderPane.margin>
         </VBox>
     </center>
     <padding>
-        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0"/>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
     </padding>
 </BorderPane>
-

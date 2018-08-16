@@ -1,5 +1,7 @@
 package com.seamfix.brprinterapp.service;
 
+import com.seamfix.brprinterapp.pojo.GenerateIDCard;
+import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardResponse;
 import com.seamfix.brprinterapp.pojo.rest.LoginResponse;
 import com.seamfix.brprinterapp.pojo.rest.TagResponse;
@@ -16,8 +18,8 @@ public interface BrPrinterClient {
     @POST("access/api/login")
     Call<LoginResponse> userLogin(@Field("email") String email, @Field("pw") String password);
 
-    @GET("idcard/generate")
-    Call<GenerateIDCardResponse> generateIDcard(@Query("pId") String pId, @Query("uniqueId") String uniqueId);
+    @POST("idcard/generate")
+    Call<GenerateIDCardResponse> generateIDcard(@Body GenerateIDCardRequest generateIDCardRequest);
 
 
     @FormUrlEncoded

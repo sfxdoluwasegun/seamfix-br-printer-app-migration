@@ -11,9 +11,7 @@
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.TextArea?>
-<BorderPane fx:id="root" prefHeight="350.0" prefWidth="400.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.seamfix.brprinterapp.controller.LandingPageController">
+<BorderPane fx:id="root" prefHeight="350.0" prefWidth="400.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seamfix.brprinterapp.controller.LandingPageController">
     <top>
         <AnchorPane>
             <children>
@@ -30,21 +28,22 @@
     </top>
     <bottom>
         <JFXButton fx:id="btnSend" BorderPane.alignment="BOTTOM_RIGHT" prefHeight="25.0" prefWidth="100.0"
-                   text="%Landing.btnSend.text" onAction="#sendToPrinter" >
-                <BorderPane.margin>
-                    <Insets right="5.0"/>
-                </BorderPane.margin>
+                   text="%Landing.btnSend.text">
+            <BorderPane.margin>
+                <Insets right="5.0"/>
+            </BorderPane.margin>
         </JFXButton>
     </bottom>
     <center>
         <VBox fx:id="vboxSysIDs" spacing="13.0" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="lblPrint"  prefHeight="25.0" text="%Landing.lblPrint.text" alignment="CENTER_LEFT">
-                        <VBox.margin>
-                            <Insets top="15"/>
-                        </VBox.margin>
+                <Label fx:id="lblPrint" prefHeight="25.0" text="%Landing.lblPrint.text" alignment="CENTER_LEFT">
+                    <VBox.margin>
+                        <Insets top="15"/>
+                    </VBox.margin>
                 </Label>
-                <TextArea fx:id="txtEnterSysIds" prefHeight="250.0" prefWidth="370.0" promptText="%Landing.txtEnterSysIds.text" />
+                <TextArea fx:id="txtEnterSysIds" prefHeight="250.0" prefWidth="370.0"
+                          promptText="%Landing.txtEnterSysIds.text"/>
             </children>
             <padding>
                 <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>

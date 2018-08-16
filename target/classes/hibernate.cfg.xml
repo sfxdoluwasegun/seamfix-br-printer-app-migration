@@ -9,9 +9,12 @@
         <property name="dialect">org.hibernate.dialect.FirebirdDialect</property>
         <property name="connection.driver_class">org.firebirdsql.jdbc.FBDriver</property>
         <property name="hbm2ddl.auto">update</property>
-        <property name="show_sql">false</property>
+        <property name="show_sql">true</property>
         <property name="format_sql">true</property>
 
         <mapping class="com.seamfix.brprinterapp.model.Config"/>
+        <mapping class="com.seamfix.brprinterapp.model.Tag"/>
+        <mapping class="com.seamfix.brprinterapp.model.Project"/>
+        <mapping class="com.seamfix.brprinterapp.model.BioUser"/>
     </session-factory>
 </hibernate-configuration>

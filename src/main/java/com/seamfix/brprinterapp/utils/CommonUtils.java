@@ -3,7 +3,9 @@ package com.seamfix.brprinterapp.utils;
 
 import com.seamfix.brprinterapp.config.AppConfig;
 import com.seamfix.brprinterapp.controller.LandingPageController;
+import com.seamfix.brprinterapp.gui.BioPrinterStage;
 import com.seamfix.brprinterapp.model.Project;
+import javafx.application.Platform;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.stage.Window;
@@ -142,4 +144,26 @@ public class CommonUtils {
         return AppConfig.get(getPriProjectForLoggedInuserKey());
     }
 
+    public static void performLogout(Window currentWindow) {
+        performLogout(currentWindow, null);
+    }
+
+    public static void performLogout(Window currentWindow, String message) {
+        log.info("Logging out");
+
+        SessionUtils.setLoggedInUser(null);
+
+        if (currentWindow != null) {
+            Platform.runLater(() -> {
+                currentWindow.hide();
+
+                BioPrinterStage loginStage = FXMLUtil.getLoginStage();
+                if (StringUtils.isNotBlank(message)) {
+                    loginStage.setUserData(message);
+                }
+
+                loginStage.show();
+            });
+        }
+    }
 }

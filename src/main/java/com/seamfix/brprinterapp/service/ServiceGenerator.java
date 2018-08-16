@@ -2,6 +2,7 @@ package com.seamfix.brprinterapp.service;
 
 import com.seamfix.brprinterapp.config.AppConfig;
 import com.seamfix.brprinterapp.pojo.enums.ConnectionType;
+import com.seamfix.brprinterapp.utils.AuthCrypter;
 import com.seamfix.brprinterapp.utils.SessionUtils;
 import lombok.Getter;
 import lombok.Setter;

@@ -2,30 +2,39 @@ package com.seamfix.brprinterapp.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.seamfix.brprinterapp.gui.BioPrinterDialog;
 import com.seamfix.brprinterapp.model.BioUser;
 import com.seamfix.brprinterapp.model.Project;
+import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
+import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardResponse;
+import com.seamfix.brprinterapp.pojo.rest.LoginResponse;
 import com.seamfix.brprinterapp.service.DataService;
-import com.seamfix.brprinterapp.utils.CommonUtils;
-import com.seamfix.brprinterapp.utils.ImageHelper;
-import com.seamfix.brprinterapp.utils.SessionUtils;
+import com.seamfix.brprinterapp.service.HttpClient;
+import com.seamfix.brprinterapp.service.ServiceGenerator;
+import com.seamfix.brprinterapp.utils.*;
+import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.*;
 
 import javafx.event.ActionEvent;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
+import javafx.util.Pair;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j;
+import org.apache.commons.lang3.StringUtils;
 
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.ResourceBundle;
+import java.util.*;
+import java.util.stream.Stream;
 
 @Log4j
 public class LandingPageController extends Controller {
@@ -37,6 +46,12 @@ public class LandingPageController extends Controller {
     @FXML
     @Getter
     private BorderPane root;
+    @FXML
+    private JFXButton btnChange;
+    @FXML
+    private Label lblPrinter;
+    @FXML
+    private TextArea txtEnterSysIds;
 
     private ChangeListener<Project> projectChangeListener;
 
@@ -47,9 +62,66 @@ public class LandingPageController extends Controller {
     }
 
 
-//    public void sendToPrinter(ActionEvent actionEvent) {
-//        new Alert(Alert.AlertType.CONFIRMATION, "Information has been sent successfully to the printer for printing").showAndWait();
-//    }
+    public void sendToPrinter(ActionEvent actionEvent) {
+        btnSend.setDisable(true);
+        String systemIds = txtEnterSysIds.getText();
+        if (StringUtils.isBlank(systemIds)) {
+            AlertUtils.getConfirm("You must enter at least one System Generated ID");
+        }
+        String[] lists = systemIds.split(",");
+        ArrayList<String> uniqueIds = new ArrayList<>(Arrays.asList(lists));
+        if (uniqueIds.size() >= 5) {
+            AlertUtils.getError("You cannot enter more than 5 System Generated Ids");
+            return;
+        }
+        String pId = SessionUtils.getCurrentProject().getPId();
+        GenerateIDCardRequest generateIDCardRequest = new GenerateIDCardRequest(pId, uniqueIds);
+        sendIDCardRequest(generateIDCardRequest);
+        log.info("Sending GeneratedIDCard Request");
+
+    }
+
+    public void sendIDCardRequest(GenerateIDCardRequest request) {
+        Task<GenerateIDCardResponse> idCardResponseTask = new Task<GenerateIDCardResponse>() {
+            @Override
+            protected GenerateIDCardResponse call() throws Exception {
+                return new HttpClient(ServiceGenerator.getInstance()).generateIDCard(request);
+            }
+
+            @Override
+            protected void running() {
+                super.running();
+                imgStatus.setImage(ImageHelper.getLoadingImage());
+            }
+
+            @Override
+            protected void failed() {
+                super.failed();
+                imgStatus.setImage(ImageHelper.getErrorImage());
+                log.error("Error with login", exceptionProperty().getValue());
+                AlertUtils.getConfirm("You require a working internet connection to login").showAndWait();
+            }
+
+            @Override
+            protected void succeeded() {
+                super.succeeded();
+                imgStatus.setImage(null);
+                GenerateIDCardResponse response = getValue();
+                lblMessage.setText(response == null ? getString("LoginStage.defaultResponseMessage") : loginResponse.getDescription());
+
+                if (response != null) {
+                    int loginResponseCode = response.getCode();
+                }
+            }
+
+            @Override
+            protected void done() {
+            }
+        };
+
+
+        new Thread(idCardResponseTask).start();
+    }
 
     public void setSelectedProject(Project selectedProject) {
         projectChangeListener.changed(projectsCombo.valueProperty(), projectsCombo.getValue(), selectedProject);
@@ -100,4 +172,25 @@ public class LandingPageController extends Controller {
         }
     }
 
+    private void performLogout() {
+        Optional<ButtonType> buttonType = AlertUtils.getConfirm("Are you sure you want to logout?").showAndWait();
+        if (buttonType.get() == ButtonType.OK) {
+            CommonUtils.performLogout(CommonUtils.getMainWindow());
+        }
+    }
+
+    private void changePrinter(ActionEvent actionEvent) {
+        Pair<Parent, Controller> pair = FXMLUtil.loadParentControllerPair(FXMLUtil.PRINTER_NAME_FXML);
+        Parent parent = pair.getKey();
+        EnterPrinterNameController controller = (EnterPrinterNameController) pair.getValue();
+        BioPrinterDialog dialog = new BioPrinterDialog(CommonUtils.getMainWindow(), new Scene(parent), "Enter Printer Name", false);
+        dialog.showAndWait();
+
+        String printer = controller.getPrinter();
+        setPrinter(printer);
+    }
+
+    private void setPrinter(String printerName) {
+        lblPrinter.setText(printerName);
+    }
 }
