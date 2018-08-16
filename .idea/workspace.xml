@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a856c7e-02bb-461f-86d5-94f073c4ddc2" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/controller/EnterPrinterNameController.class" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/controller/EnterPrinterNameController.class" />
+    <list default="true" id="8a856c7e-02bb-461f-86d5-94f073c4ddc2" name="Default" comment="Added Image Files">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/img/application_icon-ico.ico" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/img/default-project-icon.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/EncryptionInterceptor.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/EncryptionInterceptor.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/landing-page.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/landing-page.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/sign-in.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/sign-in.fxml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" afterPath="$PROJECT_DIR$/target/classes/hibernate.cfg.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -22,28 +30,8 @@
       <file leaf-file-name="SignInController.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="591">
-              <caret line="155" column="83" lean-forward="true" selection-start-line="155" selection-start-column="83" selection-end-line="155" selection-end-column="83" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="SelectDefaultProjectAndPrinterController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SelectDefaultProjectAndPrinterController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="573">
-              <caret line="55" column="46" lean-forward="true" selection-start-line="55" selection-start-column="46" selection-end-line="55" selection-end-column="46" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FXMLUtil.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/FXMLUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="28" column="93" lean-forward="false" selection-start-line="28" selection-start-column="93" selection-end-line="28" selection-end-column="93" />
+            <state relative-caret-position="271">
+              <caret line="182" column="29" lean-forward="false" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -55,18 +43,77 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="685">
-              <caret line="70" column="31" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="70" selection-end-column="31" />
+            <state relative-caret-position="760">
+              <caret line="19" column="104" lean-forward="false" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BrPrinterClient.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/BrPrinterClient.java">
+      <file leaf-file-name="FXMLUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/FXMLUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="21" column="67" lean-forward="false" selection-start-line="21" selection-start-column="67" selection-end-line="21" selection-end-column="67" />
+            <state relative-caret-position="343">
+              <caret line="28" column="91" lean-forward="false" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="LandingPageController.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="400">
+              <caret line="163" column="16" lean-forward="false" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="16" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#4909#5849#0" expanded="true" />
+                <element signature="e#5848#5849#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CommonUtils.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/CommonUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="371">
+              <caret line="121" column="66" lean-forward="false" selection-start-line="121" selection-start-column="66" selection-end-line="121" selection-end-column="66" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="enter-printer-name.fxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml">
+          <provider editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="360">
+              <caret line="9" column="47" lean-forward="false" selection-start-line="8" selection-start-column="78" selection-end-line="9" selection-end-column="47" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AppConfig.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2400">
+              <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+              <folding>
+                <element signature="e#4725#4726#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/DataService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="331">
+              <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -78,18 +125,8 @@
             <state />
           </provider>
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="LandingPageController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="302">
-              <caret line="182" column="10" lean-forward="false" selection-start-line="182" selection-start-column="10" selection-end-line="182" selection-end-column="10" />
+            <state relative-caret-position="600">
+              <caret line="15" column="57" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="15" selection-end-column="57" />
               <folding />
             </state>
           </provider>
@@ -137,6 +174,9 @@
       <find>autocommit</find>
       <find>pid</find>
       <find>signin</find>
+      <find>lblprint</find>
+      <find>USERNA</find>
+      <find>encryptioninter</find>
     </findStrings>
     <replaceStrings>
       <replace>BioPrinterStage</replace>
@@ -172,7 +212,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/config/ConfigKeys.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/config/config-dev.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/config/config-core.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/EncryptionInterceptor.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/css/css.css" />
         <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/config/config-test.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/config/config-prod.properties" />
@@ -194,21 +233,22 @@
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/ServiceGenerator.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SelectDefaultProjectAndPrinterController.java" />
         <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/select-default-project.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/CommonUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/DataService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/pojo/rest/GenerateIDCardRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/BrPrinterClient.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/pojo/rest/GenerateIDCardResponse.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/EnterPrinterNameController.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/HttpClient.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/EncryptionInterceptor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/DataService.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml" />
+        <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml" />
         <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java" />
       </list>
     </option>
   </component>
@@ -629,6 +669,30 @@
             <path>
               <item name="br-printer-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="br-printer-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="xml" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="br-printer-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="javax" type="462c0819:PsiDirectoryNode" />
+              <item name="xml" type="462c0819:PsiDirectoryNode" />
+              <item name="crypto" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="br-printer-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
               <item name="Maven: com.jfoenix:jfoenix:1.3.0" type="70bed36:NamedLibraryElementNode" />
             </path>
             <path>
@@ -781,14 +845,14 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="nodejs_interpreter_path" value="C:/Program Files/nodejs/node" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="SearchEverywhereHistoryKey" value="lan&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java&#10;gener&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/pojo/rest/GenerateIDCardRequest.java&#10;land&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml&#10;sess&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/utils/SessionUtils.java&#10;data&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/service/DataService.java&#10;comm&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/utils/CommonUtils.java&#10;sign&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml&#10;hiber&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/hibernate.cfg.xml&#10;enter&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml&#10;serv&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/service/ServiceGenerator.java&#10;de&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/select-default-project.fxml&#10;se&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/controller/SelectDefaultProjectAndPrinterController.java&#10;pom&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/pom.xml&#10;ima&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/utils/ImageHelper.java&#10;landi&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml&#10;lam&#9;PSI&#9;JAVA://java.lang.invoke.InnerClassLambdaMetafactory#lambdaClassName&#10;ses&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/utils/SessionUtils.java&#10;bio&#9;PSI&#9;JAVA://com.seamfix.brprinterapp.gui.BioPrinterStage&#10;signi&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java&#10;pro&#9;PSI&#9;JAVA://com.seamfix.brprinterapp.model.Project&#10;projec&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/select-default-project.fxml&#10;signin&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml&#10;appconfi&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java&#10;appcon&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java&#10;LAND&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml&#10;SIG&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml&#10;files&#9;PSI&#9;JAVA://java.nio.file.Files&#10;SIGN&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml&#10;jfxbut&#9;PSI&#9;JAVA://com.jfoenix.controls.JFXButton&#10;br&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/i18n/br-printer.properties" />
+    <property name="SearchEverywhereHistoryKey" value="ente&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml&#10;sign&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml&#10;config&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/model/Config.java&#10;da&#9;PSI&#9;JAVA://com.seamfix.brprinterapp.service.DataService&#10;data&#9;FILE&#9;jar://C:/Program Files (x86)/Java/jdk1.8.0_171/jre/lib/rt.jar!/javax/xml/crypto/Data.class&#10;APP&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java&#10;HTT&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/service/HttpClient.java&#10;DAT&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/service/DataService.java&#10;SERV&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/service/ServiceGenerator.java&#10;landi&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java&#10;hiber&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/hibernate.cfg.xml&#10;lan&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java&#10;gener&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/pojo/rest/GenerateIDCardRequest.java&#10;land&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml&#10;sess&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/utils/SessionUtils.java&#10;comm&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/utils/CommonUtils.java&#10;enter&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml&#10;serv&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/service/ServiceGenerator.java&#10;de&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/select-default-project.fxml&#10;se&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/controller/SelectDefaultProjectAndPrinterController.java&#10;pom&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/pom.xml&#10;ima&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/utils/ImageHelper.java&#10;lam&#9;PSI&#9;JAVA://java.lang.invoke.InnerClassLambdaMetafactory#lambdaClassName&#10;ses&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/utils/SessionUtils.java&#10;bio&#9;PSI&#9;JAVA://com.seamfix.brprinterapp.gui.BioPrinterStage&#10;signi&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java&#10;pro&#9;PSI&#9;JAVA://com.seamfix.brprinterapp.model.Project&#10;projec&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/select-default-project.fxml&#10;signin&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml&#10;appconfi&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java&#10;appcon&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java&#10;LAND&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml&#10;SIG&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml&#10;files&#9;PSI&#9;JAVA://java.nio.file.Files&#10;SIGN&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml&#10;jfxbut&#9;PSI&#9;JAVA://com.jfoenix.controls.JFXButton&#10;br&#9;FILE&#9;file://C:/Users/AOE/IdeaProjects/br-printer-app/src/main/resources/com/seamfix/brprinterapp/i18n/br-printer.properties" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
@@ -965,7 +1029,7 @@
       <workItem from="1534328720377" duration="16261000" />
       <workItem from="1534396564296" duration="4070000" />
       <workItem from="1534405547247" duration="1534000" />
-      <workItem from="1534407201004" duration="6210000" />
+      <workItem from="1534407201004" duration="11409000" />
     </task>
     <task id="LOCAL-00001" summary="Consume Login Service">
       <created>1534329249748</created>
@@ -988,11 +1052,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534413709815</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Fixed some errors with the landing-page view">
+      <created>1534414796835</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1534414796835</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="139886000" />
+    <option name="totallyTimeSpent" value="145085000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1009,7 +1080,7 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298791" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298791" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3298791" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298791" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -1017,7 +1088,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32994652" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.41393206" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37766263" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3298791" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -1030,7 +1101,7 @@
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.39953944" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25734025" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1048,163 +1119,16 @@
     <MESSAGE value="Consume Login Service" />
     <MESSAGE value="Consume ID Card Service" />
     <MESSAGE value="Fixed some errors with the landing-page view" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed some errors with the landing-page view" />
+    <MESSAGE value="Added Image Files" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Image Files" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>180</line>
-          <properties />
-          <option name="timeStamp" value="31" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>181</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>183</line>
-          <properties />
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>211</line>
-          <properties />
-          <option name="timeStamp" value="34" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>212</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>251</line>
-          <properties />
-          <option name="timeStamp" value="38" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>253</line>
-          <properties />
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>255</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>262</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>263</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>261</line>
-          <properties />
-          <option name="timeStamp" value="43" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>235</line>
-          <properties />
-          <option name="timeStamp" value="44" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>237</line>
-          <properties />
-          <option name="timeStamp" value="45" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>238</line>
-          <properties />
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>239</line>
-          <properties />
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>169</line>
-          <properties />
-          <option name="timeStamp" value="48" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>171</line>
-          <properties />
-          <option name="timeStamp" value="49" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>173</line>
-          <properties />
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>172</line>
-          <properties />
-          <option name="timeStamp" value="51" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java</url>
-          <line>179</line>
-          <properties class="com.seamfix.brprinterapp.controller.SignInController" method="showLandingPage">
-            <option name="EMULATED" value="true" />
-          </properties>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="52" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.6.0/okhttp-3.6.0.jar!/okhttp3/Response.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="15" column="19" lean-forward="false" selection-start-line="15" selection-start-column="19" selection-end-line="15" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/pojo/rest/Response.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/pojo/enums/ConnectionType.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/javafx-src.zip!/javafx/scene/control/DialogPane.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="562">
@@ -1238,6 +1162,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
           <caret line="5" column="0" lean-forward="false" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1295,6 +1220,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="351">
           <caret line="20" column="111" lean-forward="false" selection-start-line="20" selection-start-column="111" selection-end-line="20" selection-end-column="111" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1334,40 +1262,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/ServiceGenerator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
-          <folding>
-            <element signature="e#4303#4304#0" expanded="true" />
-            <element signature="e#4348#4349#0" expanded="true" />
-            <element signature="e#4493#4494#0" expanded="true" />
-            <element signature="e#4543#4544#0" expanded="true" />
-            <element signature="e#4725#4726#0" expanded="true" />
-            <element signature="e#4870#4871#0" expanded="true" />
-            <element signature="e#4917#4918#0" expanded="true" />
-            <element signature="e#5078#5079#0" expanded="true" />
-            <element signature="e#5123#5124#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/3.6.0/okhttp-3.6.0.jar!/okhttp3/internal/http/RealInterceptorChain.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="331">
@@ -1394,37 +1288,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/CommonUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2347">
-          <caret line="163" column="0" lean-forward="false" selection-start-line="163" selection-start-column="0" selection-end-line="163" selection-end-column="0" />
-          <folding>
-            <element signature="e#4671#4672#0" expanded="false" />
-            <element signature="e#4721#4722#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="11" column="38" lean-forward="false" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/model/Project.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="21" column="13" lean-forward="false" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/model/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
           <folding />
         </state>
       </provider>
@@ -1436,37 +1303,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/model/BioUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1960">
-          <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/SessionUtils.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1607">
           <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="12" column="140" lean-forward="false" selection-start-line="12" selection-start-column="140" selection-end-line="12" selection-end-column="140" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/DataService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1547">
-          <caret line="233" column="19" lean-forward="false" selection-start-line="233" selection-start-column="19" selection-end-line="233" selection-end-column="19" />
           <folding />
         </state>
       </provider>
@@ -1518,56 +1358,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/HttpClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="967">
-          <caret line="159" column="97" lean-forward="false" selection-start-line="159" selection-start-column="97" selection-end-line="159" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="685">
-          <caret line="70" column="31" lean-forward="true" selection-start-line="65" selection-start-column="24" selection-end-line="70" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/javafx-src.zip!/javafx/scene/layout/Region.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="562">
           <caret line="1093" column="27" lean-forward="false" selection-start-line="1093" selection-start-column="27" selection-end-line="1093" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/FXMLUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="28" column="93" lean-forward="false" selection-start-line="28" selection-start-column="93" selection-end-line="28" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml">
-      <provider editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="24" column="56" lean-forward="false" selection-start-line="24" selection-start-column="56" selection-end-line="24" selection-end-column="56" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="302">
-          <caret line="182" column="10" lean-forward="false" selection-start-line="182" selection-start-column="10" selection-end-line="182" selection-end-column="10" />
           <folding />
         </state>
       </provider>
@@ -1606,10 +1400,170 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/jre/lib/rt.jar!/javax/xml/crypto/Data.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#159#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/ServiceGenerator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="36" column="0" lean-forward="false" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="15" column="61" lean-forward="false" selection-start-line="15" selection-start-column="61" selection-end-line="15" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/HttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5360">
+          <caret line="159" column="97" lean-forward="false" selection-start-line="159" selection-start-column="97" selection-end-line="159" selection-end-column="97" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/model/BioUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="78">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/model/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="9" column="32" lean-forward="false" selection-start-line="9" selection-start-column="32" selection-end-line="9" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/config/AppConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2400">
+          <caret line="151" column="0" lean-forward="false" selection-start-line="151" selection-start-column="0" selection-end-line="151" selection-end-column="0" />
+          <folding>
+            <element signature="e#4725#4726#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5080">
+          <caret line="155" column="0" lean-forward="false" selection-start-line="155" selection-start-column="0" selection-end-line="155" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/EncryptionInterceptor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="160">
+          <caret line="19" column="6" lean-forward="true" selection-start-line="19" selection-start-column="6" selection-end-line="19" selection-end-column="6" />
+          <folding>
+            <element signature="e#851#852#0" expanded="true" />
+            <element signature="e#890#891#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/FXMLUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="28" column="91" lean-forward="false" selection-start-line="28" selection-start-column="91" selection-end-line="28" selection-end-column="91" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/CommonUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="121" column="66" lean-forward="false" selection-start-line="121" selection-start-column="66" selection-end-line="121" selection-end-column="66" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/DataService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="65" column="0" lean-forward="false" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files (x86)/Java/jdk1.8.0_171/javafx-src.zip!/javafx/fxml/FXMLLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="331">
+          <caret line="2547" column="0" lean-forward="false" selection-start-line="2547" selection-start-column="0" selection-end-line="2547" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/enter-printer-name.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="9" column="47" lean-forward="false" selection-start-line="8" selection-start-column="78" selection-end-line="9" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="760">
+          <caret line="19" column="104" lean-forward="false" selection-start-line="19" selection-start-column="104" selection-end-line="19" selection-end-column="104" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml">
+      <provider editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="15" column="57" lean-forward="false" selection-start-line="14" selection-start-column="60" selection-end-line="15" selection-end-column="57" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="163" column="16" lean-forward="false" selection-start-line="163" selection-start-column="16" selection-end-line="163" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#4909#5849#0" expanded="true" />
+            <element signature="e#5848#5849#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="591">
-          <caret line="155" column="83" lean-forward="true" selection-start-line="155" selection-start-column="83" selection-end-line="155" selection-end-column="83" />
+        <state relative-caret-position="271">
+          <caret line="182" column="29" lean-forward="false" selection-start-line="182" selection-start-column="29" selection-end-line="182" selection-end-column="29" />
           <folding />
         </state>
       </provider>
