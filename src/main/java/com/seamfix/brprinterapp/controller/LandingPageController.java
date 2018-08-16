@@ -52,6 +52,8 @@ public class LandingPageController extends Controller {
     private Label lblPrinter;
     @FXML
     private TextArea txtEnterSysIds;
+    @FXML
+    private ImageView imgStatus;
 
     private ChangeListener<Project> projectChangeListener;
 
@@ -107,8 +109,7 @@ public class LandingPageController extends Controller {
                 super.succeeded();
                 imgStatus.setImage(null);
                 GenerateIDCardResponse response = getValue();
-                lblMessage.setText(response == null ? getString("LoginStage.defaultResponseMessage") : loginResponse.getDescription());
-
+                
                 if (response != null) {
                     int loginResponseCode = response.getCode();
                 }
