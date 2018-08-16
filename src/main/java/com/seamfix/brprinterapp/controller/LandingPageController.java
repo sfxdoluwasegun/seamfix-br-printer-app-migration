@@ -109,7 +109,7 @@ public class LandingPageController extends Controller {
                 super.succeeded();
                 imgStatus.setImage(null);
                 GenerateIDCardResponse response = getValue();
-                
+
                 if (response != null) {
                     int loginResponseCode = response.getCode();
                 }
@@ -180,7 +180,7 @@ public class LandingPageController extends Controller {
         }
     }
 
-    private void changePrinter(ActionEvent actionEvent) {
+    public void changePrinter(ActionEvent actionEvent) {
         Pair<Parent, Controller> pair = FXMLUtil.loadParentControllerPair(FXMLUtil.PRINTER_NAME_FXML);
         Parent parent = pair.getKey();
         EnterPrinterNameController controller = (EnterPrinterNameController) pair.getValue();
