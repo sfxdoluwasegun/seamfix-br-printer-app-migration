@@ -111,7 +111,7 @@ public class LandingPageController extends Controller {
                 GenerateIDCardResponse response = getValue();
 
                 if (response != null) {
-                    int loginResponseCode = response.getCode();
+                    int responseCode = response.getCode();
                 }
             }
 

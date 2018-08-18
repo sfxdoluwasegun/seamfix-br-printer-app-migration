@@ -18,7 +18,7 @@ public class ImageHelper {
     public static final String ERROR_IMAGE = "/com/seamfix/brprinterapp/img/error-icon.png";
     public static final String OK_IMAGE = "/com/seamfix/brprinterapp/img/ok-icon.png";
     public static final String SPLASH_IMAGE = "/com/seamfix/brprinterapp/img/splash.gif";
-    public static final String DEFAULT_PROJECT_LOGO = "/com/seamfix/brprinterapp/img/default-project-icon.png";
+    public static final String DEFAULT_PROJECT_LOGO = "/com/seamfix/brprinterapp/img/bioregistra-icon.png";
     private static final String FORMAT_JPG = "JPG";
     private static final String FORMAT_BMP = "BMP";
 
