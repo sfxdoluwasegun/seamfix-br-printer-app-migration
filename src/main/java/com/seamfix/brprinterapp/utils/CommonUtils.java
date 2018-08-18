@@ -2,6 +2,7 @@ package com.seamfix.brprinterapp.utils;
 
 
 import com.seamfix.brprinterapp.config.AppConfig;
+import com.seamfix.brprinterapp.config.ConfigKeys;
 import com.seamfix.brprinterapp.controller.LandingPageController;
 import com.seamfix.brprinterapp.gui.BioPrinterStage;
 import com.seamfix.brprinterapp.model.Project;
@@ -105,6 +106,9 @@ public class CommonUtils {
         return email + ":PRIMARY_PROJECT";
     }
 
+    public static ConfigKeys getLastPrinterNameKey() {
+       return ConfigKeys.LAST_PRINTER_NAME;
+    }
     public static Window getWindowForComponent(Node node) {
         if (node == null) {
             return null;
@@ -142,6 +146,10 @@ public class CommonUtils {
     }
     public static String getPrimaryProjectForLoggedInuser() {
         return AppConfig.get(getPriProjectForLoggedInuserKey());
+    }
+
+    public static String getLastPrinterName() {
+        return AppConfig.get(getLastPrinterNameKey());
     }
 
     public static void performLogout(Window currentWindow) {
