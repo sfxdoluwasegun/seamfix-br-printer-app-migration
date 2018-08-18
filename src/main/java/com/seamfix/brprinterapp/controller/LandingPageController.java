@@ -7,17 +7,14 @@ import com.seamfix.brprinterapp.model.BioUser;
 import com.seamfix.brprinterapp.model.Project;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardResponse;
-import com.seamfix.brprinterapp.pojo.rest.LoginResponse;
 import com.seamfix.brprinterapp.service.DataService;
 import com.seamfix.brprinterapp.service.HttpClient;
 import com.seamfix.brprinterapp.service.ServiceGenerator;
 import com.seamfix.brprinterapp.utils.*;
-import javafx.application.Platform;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -34,7 +31,6 @@ import org.apache.commons.lang3.StringUtils;
 
 import java.net.URL;
 import java.util.*;
-import java.util.stream.Stream;
 
 @Log4j
 public class LandingPageController extends Controller {
@@ -59,8 +55,8 @@ public class LandingPageController extends Controller {
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        super.initialize(location, resources);
         initializeProjectsComboBox();
+        super.initialize(location, resources);
     }
 
 
@@ -68,12 +64,15 @@ public class LandingPageController extends Controller {
         btnSend.setDisable(true);
         String systemIds = txtEnterSysIds.getText();
         if (StringUtils.isBlank(systemIds)) {
-            AlertUtils.getConfirm("You must enter at least one System Generated ID");
+            AlertUtils.getConfirm("You must enter at least one System Generated ID").show();
+            btnSend.setDisable(false);
+            return;
         }
         String[] lists = systemIds.split(",");
         ArrayList<String> uniqueIds = new ArrayList<>(Arrays.asList(lists));
         if (uniqueIds.size() >= 5) {
-            AlertUtils.getError("You cannot enter more than 5 System Generated Ids");
+            AlertUtils.getError("You cannot enter more than 5 System Generated Ids").show();
+            btnSend.setDisable(false);
             return;
         }
         String pId = SessionUtils.getCurrentProject().getPId();
@@ -162,7 +161,6 @@ public class LandingPageController extends Controller {
             projectsCombo.setCellFactory(cellFactory);
 
             projectChangeListener = (observable, oldValue, newValue) -> {
-                root.setDisable(true);
                 projectsCombo.setValue(newValue);
                 SessionUtils.setCurrentProject(newValue);
             };
