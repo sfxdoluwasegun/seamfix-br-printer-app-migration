@@ -1,27 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="8a856c7e-02bb-461f-86d5-94f073c4ddc2" name="Default" comment="Integrate Fargo Printer SDK">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sf_fargo_fargojavaapi_1_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_sf_fargo_jna_1_0_0.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/FargoPrinter/MakeCardOperation.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/FargoPrinter/PrinterClass.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/model/IDCard.java" />
+    <list default="true" id="8a856c7e-02bb-461f-86d5-94f073c4ddc2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pom.xml" afterPath="$PROJECT_DIR$/pom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/config/ConfigKeys.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/config/ConfigKeys.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/LandingPageController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SelectDefaultProjectAndPrinterController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SelectDefaultProjectAndPrinterController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/controller/SignInController.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/model/Project.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/model/Project.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/pojo/rest/GenerateIDCardResponse.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/pojo/rest/GenerateIDCardResponse.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/BrPrinterClient.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/service/BrPrinterClient.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/CommonUtils.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/CommonUtils.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/ImageHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/seamfix/brprinterapp/utils/ImageHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/landing-page.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/gui/sign-in.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/i18n/br-printer_en.properties" afterPath="$PROJECT_DIR$/src/main/resources/com/seamfix/brprinterapp/i18n/br-printer_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/log4j.properties" afterPath="$PROJECT_DIR$/src/main/resources/log4j.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/landing-page.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/landing-page.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/sign-in.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/sign-in.fxml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/i18n/br-printer_en.properties" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/i18n/br-printer_en.properties" />
@@ -851,7 +832,7 @@
       <workItem from="1534601114399" duration="3540000" />
       <workItem from="1534611410017" duration="14584000" />
       <workItem from="1534680152419" duration="6780000" />
-      <workItem from="1534700529952" duration="12625000" />
+      <workItem from="1534700529952" duration="12672000" />
     </task>
     <task id="LOCAL-00001" summary="Consume Login Service">
       <created>1534329249748</created>
@@ -902,11 +883,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534604607408</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Integrate Fargo Printer SDK">
+      <created>1534721375789</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1534721375789</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206312000" />
+    <option name="totallyTimeSpent" value="206359000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
