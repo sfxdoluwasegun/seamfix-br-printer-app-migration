@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8a856c7e-02bb-461f-86d5-94f073c4ddc2" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/landing-page.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/landing-page.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/sign-in.fxml" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/gui/sign-in.fxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/i18n/br-printer_en.properties" afterPath="$PROJECT_DIR$/target/classes/com/seamfix/brprinterapp/i18n/br-printer_en.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/log4j.properties" afterPath="$PROJECT_DIR$/target/classes/log4j.properties" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -174,7 +170,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="BR-1891" />
       </map>
     </option>
   </component>
@@ -832,7 +828,7 @@
       <workItem from="1534601114399" duration="3540000" />
       <workItem from="1534611410017" duration="14584000" />
       <workItem from="1534680152419" duration="6780000" />
-      <workItem from="1534700529952" duration="12672000" />
+      <workItem from="1534700529952" duration="12768000" />
     </task>
     <task id="LOCAL-00001" summary="Consume Login Service">
       <created>1534329249748</created>
@@ -890,11 +886,18 @@
       <option name="project" value="LOCAL" />
       <updated>1534721375789</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Integrate Fargo Printer SDK">
+      <created>1534721415789</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1534721415789</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="206359000" />
+    <option name="totallyTimeSpent" value="206455000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
