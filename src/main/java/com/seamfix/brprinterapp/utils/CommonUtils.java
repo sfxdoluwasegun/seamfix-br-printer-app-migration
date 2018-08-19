@@ -25,6 +25,7 @@ import java.util.regex.Pattern;
  */
 @Log4j
 public class CommonUtils {
+
     public static String encodeBytesToBase64String(byte[] bytes) {
         Base64.Encoder encoder = Base64.getEncoder();
         return encoder.encodeToString(bytes);
@@ -144,6 +145,8 @@ public class CommonUtils {
         };
         return converter;
     }
+
+
     public static String getPrimaryProjectForLoggedInuser() {
         return AppConfig.get(getPriProjectForLoggedInuserKey());
     }

@@ -4,6 +4,8 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXTextField;
 import com.seamfix.brprinterapp.config.AppConfig;
+import com.seamfix.brprinterapp.config.ConfigKeys;
+import com.seamfix.brprinterapp.model.Config;
 import com.seamfix.brprinterapp.model.Project;
 import com.seamfix.brprinterapp.utils.CommonUtils;
 import com.seamfix.brprinterapp.utils.SessionUtils;
@@ -33,6 +35,8 @@ public class SelectDefaultProjectAndPrinterController extends Controller {
 
     private Project selectedProject;
 
+    private String printerName;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         super.initialize(location, resources);
@@ -41,17 +45,27 @@ public class SelectDefaultProjectAndPrinterController extends Controller {
 
     public void performDefaultProjectSave(ActionEvent actionEvent) {
         selectedProject = projectsCombo.getValue();
-        String printerName = txtPrinterName.getText();
+        printerName = txtPrinterName.getText();
+        String lastPrinterName = CommonUtils.getLastPrinterName();
 
-        if (selectedProject == null ) {
+        if (selectedProject == null) {
             lblMessage.setText("Select a project");
             return;
         }
-        if (StringUtils.isBlank(printerName)) {
-            lblMessage.setText("Type in the printer name");
-            return;
+        if (lastPrinterName.equals("")) {
+            if (StringUtils.isBlank(printerName)) {
+                lblMessage.setText("Type in the printer name");
+                return;
+            }
         }
+
         AppConfig.saveOrUpdate(CommonUtils.getPriProjectForLoggedInuserKey(), selectedProject.getPId());
+        if (StringUtils.isBlank(printerName)) {
+            AppConfig.saveOrUpdate(ConfigKeys.LAST_PRINTER_NAME, lastPrinterName);
+            printerName = lastPrinterName;
+        } else {
+            AppConfig.saveOrUpdate(ConfigKeys.LAST_PRINTER_NAME, printerName);
+        }
 
         CommonUtils.getWindowForComponent(btnSave).hide();
     }

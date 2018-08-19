@@ -18,7 +18,7 @@ public interface BrPrinterClient {
     @POST("access/api/login")
     Call<LoginResponse> userLogin(@Field("email") String email, @Field("pw") String password);
 
-    @POST("idcard/generate")
+    @POST("crm/api/idcard/generate")
     Call<GenerateIDCardResponse> generateIDcard(@Body GenerateIDCardRequest generateIDCardRequest);
 
 

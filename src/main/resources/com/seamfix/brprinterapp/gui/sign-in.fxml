@@ -18,7 +18,7 @@
         <VBox alignment="CENTER" BorderPane.alignment="CENTER">
             <children>
                 <Label fx:id="lblSignIn" alignment="CENTER" prefHeight="34.0" text="%LoginStage.lblSignInInstruction.text" textAlignment="JUSTIFY" wrapText="true" />
-                <Label fx:id="lblMessage" alignment="CENTER" prefHeight="34.0" style="-fx-text-fill: red" textAlignment="CENTER" wrapText="true" />
+                <Label fx:id="lblMessage" alignment="CENTER" prefHeight="34.0" style="-fx-text-fill: #58acdd; -fx-font-weight: 600" textAlignment="CENTER" wrapText="true" />
             </children>
             <BorderPane.margin>
                 <Insets top="5.0" />
@@ -51,7 +51,7 @@
                 </HBox>
                 <HBox>
                     <children>
-                        <Label fx:id="lblPassword" prefHeight="25.0" prefWidth="60" text="Password" />
+                        <Label fx:id="lblPassword" prefHeight="25.0" prefWidth="60" text="%LoginStage.txtPassword.promptText" />
                         <JFXPasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="222.0" />
                     </children>
                 </HBox>
@@ -66,7 +66,7 @@
                         <HBox spacing="0.0" AnchorPane.rightAnchor="0.0">
                             <children>
                                 <JFXButton fx:id="btnSignIn" defaultButton="true" mnemonicParsing="false" onAction="#performSignIn" prefHeight="25.0" prefWidth="75.0" text="%LoginStage.btnSignIn.text" />
-                                <ImageView fx:id="imgStatus" fitHeight="25.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true" />
+                                <ImageView fx:id="imgStatus" fitHeight="25.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
                             </children>
                         </HBox>
                     </children>

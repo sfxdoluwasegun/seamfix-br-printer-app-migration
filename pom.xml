@@ -486,6 +486,7 @@
                                 <preCp>${location.folder.name}/jni4net.j-0.8.6.0.jar</preCp>
                                 <!--<jarLocation>lib/</jarLocation>-->
                             </classPath>
+
                             <jre>
                                 <jdkPreference>preferJre</jdkPreference>
                                 <runtimeBits>32</runtimeBits>
@@ -637,6 +638,16 @@
             <version>1.0.0</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.sf.fargo</groupId>
+            <artifactId>fargojavaapi</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sf.fargo</groupId>
+            <artifactId>jna</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
 
     <!--PROFILES-->

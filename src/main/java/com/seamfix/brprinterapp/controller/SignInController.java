@@ -35,6 +35,10 @@ import org.apache.commons.lang3.StringUtils;
 
 import javafx.scene.image.ImageView;
 
+import javax.imageio.ImageIO;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.File;
 import java.net.URL;
 import java.util.HashSet;
 import java.util.Optional;
@@ -81,11 +85,21 @@ public class SignInController extends Controller {
 
     public void performSignIn(ActionEvent actionEvent) {
         log.info("performing sign in...");
+//        byte[] bytes = CommonUtils.decodeBase64StringToBytes(null);
+
+//        ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
+//        try {
+//            BufferedImage bImage2 = ImageIO.read(bis);
+//            ImageIO.write(bImage2, "jpg", new File("output.jpg"));
+//            System.out.println("image created");
+//        } catch (Exception e) {
+//            log.info(e.getMessage());
+//        }
 
         String username = txtUsername.getText();
         String password = txtPassword.getText();
 
-        log.debug("Logging in " + username + " with " + password);
+        log.debug("Signing in " + username + " with " + password);
 
         if (StringUtils.isBlank(username) || StringUtils.isBlank(password)) {
             lblMessage.setText(getString("LoginStage.blankCredentialsMessage"));
@@ -140,9 +154,26 @@ public class SignInController extends Controller {
 
                     boolean validUser = loginResponseCode == 0;
                     if (validUser) {
+//                        Boolean printIdCard = null;
+//                        BioUser user = loginResponse.getBioUser();
+//                        Set<Project> projects = user.getProjects();
+//                        for (Project project: projects) {
+//                            printIdCard = project.getAllowPrintIdCard();
+//                            if (printIdCard != null) {
+//                                if (printIdCard == true) {
+//                                    break;
+//                                }
+//                            }
+//                        }
+//                        if (printIdCard == null || printIdCard == false) {
+//                            AlertUtils.getError(getString("LoginStage.SignInUnauthorised.text")).show();
+//                            return;
+//                        }
                         BioUser bioUser = saveOrUpdateBioUserEntity(loginResponse.getBioUser(), password, loginResponse.isGdprCompliant());
                         performSuccessfulLoginAction(bioUser);
+
                     }
+
                 }
             }
 
@@ -154,7 +185,7 @@ public class SignInController extends Controller {
 
 
         lblMessage.visibleProperty().bind(onlineLoginTask.runningProperty().not());
-        Stream.<Node>of(txtUsername, txtPassword, btnSignIn, toRememberBox).forEach(node -> node.disableProperty().bind(onlineLoginTask.runningProperty()));
+//        Stream.<Node>of(txtUsername, txtPassword, btnSignIn, toRememberBox).forEach(node -> node.disableProperty().bind(onlineLoginTask.runningProperty()));
 
         new Thread(onlineLoginTask).start();
     }
@@ -181,6 +212,7 @@ public class SignInController extends Controller {
         Pair<Parent, Controller> pair = FXMLUtil.loadParentControllerPair(FXMLUtil.LANDING_PAGE_FXML);
         Parent parent = pair.getKey();
         LandingPageController controller = (LandingPageController) pair.getValue();
+        SessionUtils.setLandingPageController(controller);
         BioPrinterStage mainStage = new BioPrinterStage(new Scene(parent));
         String title = "BioRegistra Printer App";
         mainStage.setTitle(title);
@@ -214,6 +246,7 @@ public class SignInController extends Controller {
                 BioPrinterDialog dialog = new BioPrinterDialog(CommonUtils.getMainWindow(), new Scene(parent), "Select primary project", false);
                 dialog.showAndWait();
 
+                landingPageController.setSelectedPrinterName(controller.getPrinterName());
                 landingPageController.setSelectedProject(controller.getSelectedProject());
             }
         }

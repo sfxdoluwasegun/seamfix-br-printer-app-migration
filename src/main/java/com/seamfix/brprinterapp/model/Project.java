@@ -97,6 +97,11 @@ public class Project extends BaseEntity {
     @Transient
     private String logo;
 
+    @Getter
+    @Setter
+    @Transient
+    private Boolean allowPrintIdCard;
+
     @Transient
     private Long created;
 
