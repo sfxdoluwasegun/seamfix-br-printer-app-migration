@@ -57,7 +57,7 @@ public class Crypter {
 //            hence the hiding of the exception stacktrace
 //            it simply indicates that a valid non encrypted text has been encountered and so terminate and return the decrypted String
         } catch (IllegalArgumentException | UnsupportedEncodingException | IllegalBlockSizeException | BadPaddingException e) {
-//            log.error("decryptException " + encryptedText + " " + e.getMessage());
+            log.error("decryptException " + encryptedText + " " + e.getMessage());
         }
 
         return encryptedText;

@@ -5,6 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.seamfix.brprinterapp.FargoPrinter.PrinterClass;
 import com.seamfix.brprinterapp.gui.BioPrinterDialog;
 import com.seamfix.brprinterapp.model.BioUser;
+import com.seamfix.brprinterapp.model.IDCard;
 import com.seamfix.brprinterapp.model.Project;
 import com.seamfix.brprinterapp.pojo.GenerateIDCard;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
@@ -16,7 +17,6 @@ import com.seamfix.brprinterapp.utils.*;
 import javafx.beans.value.ChangeListener;
 import javafx.collections.FXCollections;
 import javafx.concurrent.Task;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -25,21 +25,22 @@ import javafx.scene.control.*;
 import javafx.event.ActionEvent;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.util.Callback;
 import javafx.util.Pair;
 import lombok.Getter;
 import lombok.extern.log4j.Log4j;
-import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
 import java.io.ByteArrayInputStream;
 import java.io.File;
+import java.io.IOException;
 import java.net.URL;
-import java.nio.file.Files;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.*;
 
 @Log4j
@@ -67,6 +68,8 @@ public class LandingPageController extends Controller {
 
     private ChangeListener<Project> projectChangeListener;
 
+    private File images;
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         logoutImage.setImage(ImageHelper.getImage(ImageHelper.LOGOUT_ICON));
@@ -74,14 +77,15 @@ public class LandingPageController extends Controller {
         initializeProjectsComboBox();
         super.initialize(location, resources);
         logoutImage.setOnMouseClicked(event -> performLogout());
-
-
+        images = new File("printImages");
+        images.mkdirs();
     }
 
 
     public void sendToPrinter(ActionEvent actionEvent) {
         btnSend.setDisable(true);
         String systemIds = txtEnterSysIds.getText();
+        systemIds = systemIds.trim();
         String[] lists = systemIds.split(",");
         ArrayList<String> uniqueIds = new ArrayList<>(Arrays.asList(lists));
         if (uniqueIds.size() >= 5) {
@@ -98,7 +102,6 @@ public class LandingPageController extends Controller {
         log.info("Sending GeneratedIDCard Request");
 
     }
-
 
     public void sendIDCardRequest(GenerateIDCardRequest request) {
         Task<GenerateIDCardResponse> idCardResponseTask = new Task<GenerateIDCardResponse>() {
@@ -137,24 +140,43 @@ public class LandingPageController extends Controller {
                         for (GenerateIDCard generateIDCard : responseList) {
                             if (!availableIds) {
                                 String frontImage = generateIDCard.getFrontView();
-                                File images = new File("IdCardImages");
-                                images.mkdirs();
                                 try {
-                                    BufferedImage bImage2 = ImageIO.read(writeImage(frontImage));
-                                    ImageIO.write(bImage2, "jpg", new File(images, "front.jpg"));
-                                    System.out.println("image created");
+                                    BufferedImage bImage = ImageIO.read(writeImage(frontImage));
+                                    if (getBitDepth(bImage)) {
+                                        ImageIO.write(bImage, "jpg", new File(images, "front.jpg"));
+                                        System.out.println("image created");
+                                    } else {
+                                        bImage = convertTo24Bit(bImage);
+                                        ImageIO.write(bImage, "jpg", new File(images, "front.jpg"));
+                                        System.out.println("image created");
+                                    }
+
                                 } catch (Exception e) {
                                     log.info(e.getMessage());
                                 }
                                 String backImage = generateIDCard.getBackView();
                                 try {
-                                    BufferedImage bImage2 = ImageIO.read(writeImage(backImage));
-                                    ImageIO.write(bImage2, "jpg", new File(images,"back.jpg"));
-                                    System.out.println("image created");
+                                    BufferedImage bImage1 = ImageIO.read(writeImage(backImage));
+                                    if (getBitDepth(bImage1)) {
+                                        saveBackImage(bImage1);
+                                    } else {
+                                        bImage1 = convertTo24Bit(bImage1);
+                                        saveBackImage(bImage1);
+                                    }
+
                                 } catch (Exception e) {
                                     log.info(e.getMessage());
                                 }
-                             printerTask();
+//                                String syst = "red";
+//                                IDCard id = new IDCard();
+//                                id.setSystemId(syst);
+//                                long currentTIme = System.currentTimeMillis();
+//                                Date currentDate = new Date(currentTIme);
+//                                DateFormat df = new SimpleDateFormat("dd:MM:yy:HH:mm:ss");
+//                                String time = df.format(currentDate);
+//                                id.setCreateTimeStamp();
+
+                                printerTask();
                             }
 
                         }
@@ -173,6 +195,28 @@ public class LandingPageController extends Controller {
 
 
         new Thread(idCardResponseTask).start();
+    }
+
+    private boolean getBitDepth(BufferedImage img) {
+        int depth = img.getColorModel().getPixelSize();
+        if (depth == 24) {
+            return true;
+        }
+        return false;
+    }
+
+    private void saveBackImage(BufferedImage image) throws IOException {
+        ImageIO.write(image, "jpg", new File(images, "back.jpg"));
+        System.out.println("image created");
+    }
+
+    private BufferedImage convertTo24Bit(BufferedImage bufferedImage) {
+        BufferedImage dest = new BufferedImage(bufferedImage.getWidth(), bufferedImage.getHeight(),
+                BufferedImage.TYPE_INT_RGB);
+        ColorConvertOp cco = new ColorConvertOp(bufferedImage.getColorModel()
+                .getColorSpace(), dest.getColorModel().getColorSpace(), null);
+        cco.filter(bufferedImage, dest);
+        return dest;
     }
 
     public ByteArrayInputStream writeImage(String base64String) {
@@ -194,6 +238,7 @@ public class LandingPageController extends Controller {
         log.info("Started print task");
         new Thread(runnable).start();
     }
+
     public void setSelectedPrinterName(String printerName) {
         lblPrinter.setText(printerName);
     }

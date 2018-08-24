@@ -1,6 +1,5 @@
 package com.seamfix.brprinterapp.service;
 
-import com.seamfix.brprinterapp.pojo.GenerateIDCard;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardResponse;
 import com.seamfix.brprinterapp.pojo.rest.LoginResponse;

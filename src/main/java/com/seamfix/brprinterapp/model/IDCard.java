@@ -2,6 +2,7 @@ package com.seamfix.brprinterapp.model;
 
 
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.Column;
@@ -14,6 +15,7 @@ import java.sql.Timestamp;
 @Table(name = "IDCARD")
 @Getter
 @Setter
+@NoArgsConstructor
 public class IDCard extends BaseEntity {
 
     @Column(unique = true)
@@ -22,11 +24,8 @@ public class IDCard extends BaseEntity {
     @Column
     private Timestamp createTimeStamp;
 
-    @Column
-    private int printTimes;
 
     @Column
-    private String fileDirectory;
-
+    private int timesPrinted;
 
 }

@@ -16,5 +16,6 @@
         <mapping class="com.seamfix.brprinterapp.model.Tag"/>
         <mapping class="com.seamfix.brprinterapp.model.Project"/>
         <mapping class="com.seamfix.brprinterapp.model.BioUser"/>
+        <mapping class="com.seamfix.brprinterapp.model.IDCard"/>
     </session-factory>
 </hibernate-configuration>

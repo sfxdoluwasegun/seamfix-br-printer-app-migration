@@ -3,6 +3,7 @@ package com.seamfix.brprinterapp.FargoPrinter;
 import com.seamfix.brprinterapp.utils.AlertUtils;
 import impl.Fargo.*;
 
+@SuppressWarnings("PMD")
 public class MakeCardOperation {
     // Name of the printer
     private String m_printerName;
@@ -185,8 +186,8 @@ public class MakeCardOperation {
 //        m_printJob.addPrintImageElement( /*m_pictureDirectorty + m_pictureName*/"backport.jpg", 1, 0, 0, 1);
 //
 
-        m_printJob.addPrintImageElement( /*m_pictureDirectorty + m_pictureName*/"IdCardImages/backport.jpg", 1, 0, 0, 1);
-        m_printJob.addPrintImageElement( /*m_pictureDirectorty + m_pictureName*/"IdCardImages/backport.jpg", 1, 0, 0, 0);
+        m_printJob.addPrintImageElement( /*m_pictureDirectorty + m_pictureName*/"printImages/front.jpg", 1, 0, 0, 0);
+        m_printJob.addPrintImageElement( /*m_pictureDirectorty + m_pictureName*/"printImages/back.jpg", 1, 0, 0, 1);
 
 
         // *******************************************
@@ -240,16 +241,16 @@ public class MakeCardOperation {
 
 
             // Do we have data for this track?
-            if (trackData != null) {
+//            if (trackData != null) {
 
-                // encode the track data
-                String trackEncoded = getStartSentinel(index + 1) +
-                        trackData +
-                        getStopSentinel(index + 1);
-
-                // print the current Data Input Element
-                m_printJob.addPrintMagElement(trackEncoded, index + 1);
-            }
+//                // encode the track data
+//                String trackEncoded = getStartSentinel(index + 1) +
+//                        trackData +
+//                        getStopSentinel(index + 1);
+//
+//                // print the current Data Input Element
+//                m_printJob.addPrintMagElement(trackEncoded, index + 1);
+//            }
         }
 
     }
