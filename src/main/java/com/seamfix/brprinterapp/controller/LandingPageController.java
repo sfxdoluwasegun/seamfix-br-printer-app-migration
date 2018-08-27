@@ -5,7 +5,7 @@ import com.jfoenix.controls.JFXComboBox;
 import com.seamfix.brprinterapp.FargoPrinter.PrinterClass;
 import com.seamfix.brprinterapp.gui.BioPrinterDialog;
 import com.seamfix.brprinterapp.model.BioUser;
-import com.seamfix.brprinterapp.model.IDCard;
+import com.seamfix.brprinterapp.model.IdCard;
 import com.seamfix.brprinterapp.model.Project;
 import com.seamfix.brprinterapp.pojo.GenerateIDCard;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
@@ -39,9 +39,8 @@ import java.io.ByteArrayInputStream;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.stream.Stream;
 
 @Log4j
 public class LandingPageController extends Controller {
@@ -86,16 +85,24 @@ public class LandingPageController extends Controller {
         btnSend.setDisable(true);
         String systemIds = txtEnterSysIds.getText();
         systemIds = systemIds.trim();
-        String[] lists = systemIds.split(",");
-        ArrayList<String> uniqueIds = new ArrayList<>(Arrays.asList(lists));
-        if (uniqueIds.size() >= 5) {
+        String[] lists = systemIds.split("[,\\s\\r?\\n]");
+        ArrayList<String> uniqueIds = new ArrayList<String>();
+        for (String unique : lists) {
+            unique = unique.trim();
+            if (StringUtils.isBlank(unique)) {
+                continue;
+            }
+            uniqueIds.add(unique);
+        }
+        if (uniqueIds.size() > 5) {
             AlertUtils.getError("You cannot enter more than 5 System Generated Ids").show();
             btnSend.setDisable(false);
             return;
         }
-        if (uniqueIds.get(0).equals("")) {
+        if (uniqueIds.size() == 0) {
             uniqueIds = null;
         }
+
         String pId = SessionUtils.getCurrentProject().getPId();
         GenerateIDCardRequest generateIDCardRequest = new GenerateIDCardRequest(pId, uniqueIds);
         sendIDCardRequest(generateIDCardRequest);
@@ -127,63 +134,8 @@ public class LandingPageController extends Controller {
             @Override
             protected void succeeded() {
                 super.succeeded();
-                imgStatus.setImage(ImageHelper.getOKImage());
                 GenerateIDCardResponse response = getValue();
-
-                if (response != null) {
-                    int responseCode = response.getCode();
-                    ArrayList<GenerateIDCard> responseList = response.getIdcards();
-                    boolean availableIds = responseList.isEmpty();
-                    String responseDescription = response.getDescription();
-                    lblPrint.setText(responseDescription);
-                    if (responseCode == 0) {
-                        for (GenerateIDCard generateIDCard : responseList) {
-                            if (!availableIds) {
-                                String frontImage = generateIDCard.getFrontView();
-                                try {
-                                    BufferedImage bImage = ImageIO.read(writeImage(frontImage));
-                                    if (getBitDepth(bImage)) {
-                                        ImageIO.write(bImage, "jpg", new File(images, "front.jpg"));
-                                        System.out.println("image created");
-                                    } else {
-                                        bImage = convertTo24Bit(bImage);
-                                        ImageIO.write(bImage, "jpg", new File(images, "front.jpg"));
-                                        System.out.println("image created");
-                                    }
-
-                                } catch (Exception e) {
-                                    log.info(e.getMessage());
-                                }
-                                String backImage = generateIDCard.getBackView();
-                                try {
-                                    BufferedImage bImage1 = ImageIO.read(writeImage(backImage));
-                                    if (getBitDepth(bImage1)) {
-                                        saveBackImage(bImage1);
-                                    } else {
-                                        bImage1 = convertTo24Bit(bImage1);
-                                        saveBackImage(bImage1);
-                                    }
-
-                                } catch (Exception e) {
-                                    log.info(e.getMessage());
-                                }
-//                                String syst = "red";
-//                                IDCard id = new IDCard();
-//                                id.setSystemId(syst);
-//                                long currentTIme = System.currentTimeMillis();
-//                                Date currentDate = new Date(currentTIme);
-//                                DateFormat df = new SimpleDateFormat("dd:MM:yy:HH:mm:ss");
-//                                String time = df.format(currentDate);
-//                                id.setCreateTimeStamp();
-
-                                printerTask();
-                            }
-
-                        }
-                    }
-
-
-                }
+                handleImageResponse(response);
             }
 
             @Override
@@ -195,6 +147,69 @@ public class LandingPageController extends Controller {
 
 
         new Thread(idCardResponseTask).start();
+    }
+
+    public void handleImageResponse(GenerateIDCardResponse response) {
+
+        if (response != null) {
+            int responseCode = response.getCode();
+            ArrayList<GenerateIDCard> responseList = response.getIdcards();
+            boolean availableIds = responseList.isEmpty();
+            String responseDescription = response.getDescription();
+            lblPrint.setText(responseDescription);
+            if (responseCode == 0) {
+                for (GenerateIDCard generateIDCard : responseList) {
+                    if (!availableIds) {
+                        String frontImage = generateIDCard.getFrontView();
+                        try {
+                            BufferedImage bImage = ImageIO.read(writeImage(frontImage));
+                            if (getBitDepth(bImage)) {
+                                ImageIO.write(bImage, "jpg", new File(images, "front.jpg"));
+                                System.out.println("image created");
+                            } else {
+                                bImage = convertTo24Bit(bImage);
+                                ImageIO.write(bImage, "jpg", new File(images, "front.jpg"));
+                                System.out.println("image created");
+                            }
+
+                        } catch (Exception e) {
+                            log.info(e.getMessage());
+                        }
+                        String backImage = generateIDCard.getBackView();
+                        try {
+                            BufferedImage bImage1 = ImageIO.read(writeImage(backImage));
+                            if (getBitDepth(bImage1)) {
+                                saveBackImage(bImage1);
+                            } else {
+                                bImage1 = convertTo24Bit(bImage1);
+                                saveBackImage(bImage1);
+                            }
+
+                        } catch (Exception e) {
+                            log.info(e.getMessage());
+                        }
+//        DataService ds = DataService.getInstance();
+//        String sysGenId = response.getSystemGeneratedId;
+//        IdCard available = ds.getIdCardByGenId(sysGenId);
+
+//        if (available == null) {
+//            available = new IdCard(sysGenId, new Timestamp(System.currentTimeMillis()), 1);
+//            DataService.getInstance().create(available);
+//        } else {
+//            available.setTimesPrinted(1 + available.getTimesPrinted());
+//            available.setLatestTime(new Timestamp(System.currentTimeMillis()));
+//            ds.createOrUpdate(available);
+//        }
+                        printerTask();
+                    }
+
+                }
+                imgStatus.setImage(ImageHelper.getOKImage());
+            }
+
+
+        }
+
     }
 
     private boolean getBitDepth(BufferedImage img) {
@@ -229,12 +244,8 @@ public class LandingPageController extends Controller {
     }
 
     private void printerTask() {
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                PrinterClass.startPrinting(lblPrinter.getText());
-            }
-        };
+        Runnable runnable = () -> PrinterClass.startPrinting(lblPrinter.getText());
+
         log.info("Started print task");
         new Thread(runnable).start();
     }

@@ -1,9 +1,7 @@
 package com.seamfix.brprinterapp.model;
 
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Table;
@@ -16,16 +14,16 @@ import java.sql.Timestamp;
 @Getter
 @Setter
 @NoArgsConstructor
-public class IDCard extends BaseEntity {
+@AllArgsConstructor
+public class IdCard extends BaseEntity {
 
     @Column(unique = true)
     private String systemId;
 
     @Column
-    private Timestamp createTimeStamp;
-
+    private Timestamp latestTime;
 
     @Column
-    private int timesPrinted;
+    private long timesPrinted;
 
 }

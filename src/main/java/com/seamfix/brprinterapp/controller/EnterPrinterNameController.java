@@ -2,6 +2,8 @@ package com.seamfix.brprinterapp.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXTextField;
+import com.seamfix.brprinterapp.config.AppConfig;
+import com.seamfix.brprinterapp.config.ConfigKeys;
 import com.seamfix.brprinterapp.utils.CommonUtils;
 import javafx.fxml.FXML;
 import lombok.Getter;
@@ -36,6 +38,7 @@ public class EnterPrinterNameController extends Controller {
             return;
         }
         printer = printerName;
+        AppConfig.saveOrUpdate(ConfigKeys.LAST_PRINTER_NAME, printer);
 
         CommonUtils.getWindowForComponent(btnSave).hide();
     }

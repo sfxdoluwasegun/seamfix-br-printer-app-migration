@@ -18,7 +18,7 @@ public class PrinterClass {
         // Each thread of the Java application may interact with the Fargo
         // Printer SDK independently as long as they do so with seperate
         // instances of the FargoPrinter class.
-        m_makeCard1 = new MakeCardOperation("HDP5000 Card Printer (Copy 1)");
+        m_makeCard1 = new MakeCardOperation(printerName);
 
         // Do the calls to actually produce the card.
         m_makeCard1.produceCard();

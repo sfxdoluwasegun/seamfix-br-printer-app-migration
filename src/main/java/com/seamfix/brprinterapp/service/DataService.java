@@ -237,4 +237,7 @@ public class DataService {
         return getUniqueByProperties(Project.class, new Pair<>("pId", crypter.encrypt(pId)));
     }
 
+    public IdCard getIdCardByGenId(String genId) {
+        return getUniqueByProperty(IdCard.class, "systemId", genId);
+    }
 }

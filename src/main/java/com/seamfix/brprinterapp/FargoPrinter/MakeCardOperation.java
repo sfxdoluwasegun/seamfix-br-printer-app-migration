@@ -2,6 +2,7 @@ package com.seamfix.brprinterapp.FargoPrinter;
 
 import com.seamfix.brprinterapp.utils.AlertUtils;
 import impl.Fargo.*;
+import javafx.application.Platform;
 
 @SuppressWarnings("PMD")
 public class MakeCardOperation {
@@ -359,7 +360,7 @@ public class MakeCardOperation {
         if (m_currentActivity == CurrentActivity.CurrentActivityUnknown) {
             // The printer is not communicating.
             // generate exception
-            AlertUtils.getError("Failed to communicate with the Printer").show();
+            Platform.runLater(()-> AlertUtils.getError("Error sending instruction to printer. Please check all connections and try again").show());
             result = false;
         }
 

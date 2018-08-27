@@ -10,6 +10,7 @@ import com.seamfix.brprinterapp.config.ConfigKeys;
 import com.seamfix.brprinterapp.gui.BioPrinterDialog;
 import com.seamfix.brprinterapp.gui.BioPrinterStage;
 import com.seamfix.brprinterapp.model.BioUser;
+import com.seamfix.brprinterapp.model.IdCard;
 import com.seamfix.brprinterapp.model.Project;
 import com.seamfix.brprinterapp.pojo.rest.LoginResponse;
 import com.seamfix.brprinterapp.service.DataService;
@@ -35,15 +36,9 @@ import org.apache.commons.lang3.StringUtils;
 
 import javafx.scene.image.ImageView;
 
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.io.ByteArrayInputStream;
-import java.io.File;
 import java.net.URL;
-import java.util.HashSet;
-import java.util.Optional;
-import java.util.ResourceBundle;
-import java.util.Set;
+import java.sql.Timestamp;
+import java.util.*;
 import java.util.stream.Stream;
 
 @Log4j
@@ -85,17 +80,6 @@ public class SignInController extends Controller {
 
     public void performSignIn(ActionEvent actionEvent) {
         log.info("performing sign in...");
-//        byte[] bytes = CommonUtils.decodeBase64StringToBytes(null);
-
-//        ByteArrayInputStream bis = new ByteArrayInputStream(bytes);
-//        try {
-//            BufferedImage bImage2 = ImageIO.read(bis);
-//            ImageIO.write(bImage2, "jpg", new File("output.jpg"));
-//            System.out.println("image created");
-//        } catch (Exception e) {
-//            log.info(e.getMessage());
-//        }
-
         String username = txtUsername.getText();
         String password = txtPassword.getText();
 
@@ -154,21 +138,21 @@ public class SignInController extends Controller {
 
                     boolean validUser = loginResponseCode == 0;
                     if (validUser) {
-//                        Boolean printIdCard = null;
-//                        BioUser user = loginResponse.getBioUser();
-//                        Set<Project> projects = user.getProjects();
-//                        for (Project project: projects) {
-//                            printIdCard = project.getAllowPrintIdCard();
-//                            if (printIdCard != null) {
-//                                if (printIdCard == true) {
-//                                    break;
-//                                }
-//                            }
-//                        }
-//                        if (printIdCard == null || printIdCard == false) {
-//                            AlertUtils.getError(getString("LoginStage.SignInUnauthorised.text")).show();
-//                            return;
-//                        }
+                        Boolean printIdCard = null;
+                        BioUser user = loginResponse.getBioUser();
+                        Set<Project> projects = user.getProjects();
+                        for (Project project: projects) {
+                            printIdCard = project.getAllowPrintIdCard();
+                            if (printIdCard != null) {
+                                if (printIdCard == true) {
+                                    break;
+                                }
+                            }
+                        }
+                        if (printIdCard == null || printIdCard == false) {
+                            AlertUtils.getError(getString("LoginStage.SignInUnauthorised.text")).show();
+                            return;
+                        }
                         BioUser bioUser = saveOrUpdateBioUserEntity(loginResponse.getBioUser(), password, loginResponse.isGdprCompliant());
                         performSuccessfulLoginAction(bioUser);
 
@@ -185,8 +169,8 @@ public class SignInController extends Controller {
 
 
         lblMessage.visibleProperty().bind(onlineLoginTask.runningProperty().not());
-//        Stream.<Node>of(txtUsername, txtPassword, btnSignIn, toRememberBox).forEach(node -> node.disableProperty().bind(onlineLoginTask.runningProperty()));
-
+        Node[] nods = {txtUsername, toRememberBox, txtPassword, btnSignIn};
+        Arrays.stream(nods).forEach(node -> node.disableProperty().bind(onlineLoginTask.runningProperty()));
         new Thread(onlineLoginTask).start();
     }
 
@@ -260,7 +244,6 @@ public class SignInController extends Controller {
             System.exit(0);
         }
     }
-
 
 
     public BioUser saveOrUpdateBioUserEntity(BioUser bioUserFromServer, String password, boolean gdprCompliant) {

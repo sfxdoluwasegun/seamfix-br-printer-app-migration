@@ -1,9 +1,6 @@
 package com.seamfix.brprinterapp.utils;
 
-import com.seamfix.brprinterapp.model.BioUser;
-import com.seamfix.brprinterapp.model.Config;
-import com.seamfix.brprinterapp.model.Project;
-import com.seamfix.brprinterapp.model.Tag;
+import com.seamfix.brprinterapp.model.*;
 import lombok.extern.log4j.Log4j;
 import org.apache.commons.lang3.StringUtils;
 import org.hibernate.EmptyInterceptor;
