@@ -154,10 +154,10 @@ public class LandingPageController extends Controller {
         if (response != null) {
             int responseCode = response.getCode();
             ArrayList<GenerateIDCard> responseList = response.getIdcards();
-            boolean availableIds = responseList.isEmpty();
             String responseDescription = response.getDescription();
             lblPrint.setText(responseDescription);
             if (responseCode == 0) {
+                boolean availableIds = responseList.isEmpty();
                 for (GenerateIDCard generateIDCard : responseList) {
                     if (!availableIds) {
                         String frontImage = generateIDCard.getFrontView();
@@ -205,6 +205,10 @@ public class LandingPageController extends Controller {
 
                 }
                 imgStatus.setImage(ImageHelper.getOKImage());
+            } else {
+                AlertUtils.getError("We are sorry about this but we are working on this service right now. Please try again later.").show();
+                imgStatus.setImage(ImageHelper.getErrorImage());
+                return;
             }
 
 

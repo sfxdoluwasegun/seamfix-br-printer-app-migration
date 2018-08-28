@@ -1,9 +1,6 @@
 package com.seamfix.brprinterapp.service;
 
-import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
-import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardResponse;
-import com.seamfix.brprinterapp.pojo.rest.LoginResponse;
-import com.seamfix.brprinterapp.pojo.rest.TagResponse;
+import com.seamfix.brprinterapp.pojo.rest.*;
 import retrofit2.Call;
 import retrofit2.http.*;
 
@@ -13,16 +10,15 @@ import retrofit2.http.*;
 
 public interface BrPrinterClient {
 
-    @FormUrlEncoded
-    @POST("access/api/login")
-    Call<LoginResponse> userLogin(@Field("email") String email, @Field("pw") String password);
-
     @POST("crm/api/idcard/generate")
     Call<GenerateIDCardResponse> generateIDcard(@Body GenerateIDCardRequest generateIDCardRequest);
 
+    @FormUrlEncoded
+    @POST("access/api/login")
+    Call<LoginResponse> userLogin(@Field(value = "email", encoded = true) String email, @Field("pw") String password);
 
     @FormUrlEncoded
     @POST("projects/api/config/tag")
-    Call<TagResponse> tagDevice(@Field("type") String deviceType, @Field("uniqueId") String uniqueId);
+    Call<TagResponse> tagDevice(@Field(value = "type", encoded = true) String deviceType, @Field("uniqueId") String uniqueId);
 
 }

@@ -201,7 +201,7 @@
                         <option>-keep class com.seamfix.brprinterapp.pojo.** { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.model.** { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.controller.** { *; }</option>
-                        <option>-keep class com.seamfix.brprinterapp.service.BioPrinterClient { *; }</option>
+                        <option>-keep class com.seamfix.brprinterapp.service.BrPrinterClient { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.App { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.utils.BrThrowableRenderer { *; }</option>
                         <option>-keep public enum com.seamfix.brprinterapp.** { *; }</option>
