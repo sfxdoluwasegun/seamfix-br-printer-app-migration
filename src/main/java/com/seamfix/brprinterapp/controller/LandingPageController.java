@@ -103,11 +103,13 @@ public class LandingPageController extends Controller {
             uniqueIds = null;
         }
 
-        String pId = SessionUtils.getCurrentProject().getPId();
-        if (pId == null) {
+        Project currentProject = SessionUtils.getCurrentProject();
+        if (currentProject == null) {
             AlertUtils.getError("Please select a project").show();
+            btnSend.setDisable(false);
             return;
         }
+        String pId = SessionUtils.getCurrentProject().getPId();
         GenerateIDCardRequest generateIDCardRequest = new GenerateIDCardRequest(pId, uniqueIds);
         sendIDCardRequest(generateIDCardRequest);
         log.info("Sending GeneratedIDCard Request");
@@ -205,6 +207,8 @@ public class LandingPageController extends Controller {
 //            ds.createOrUpdate(available);
 //        }
                         if (lblPrinter.getText() == null) {
+                            AlertUtils.getError("Please type in the printer's name. You can do that with the change button just above the text area").show();
+                            imgStatus.setImage(ImageHelper.getErrorImage());
                             return;
                         }
                         printerTask();
