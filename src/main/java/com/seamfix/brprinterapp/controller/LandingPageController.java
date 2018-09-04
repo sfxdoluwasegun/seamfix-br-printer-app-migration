@@ -104,6 +104,10 @@ public class LandingPageController extends Controller {
         }
 
         String pId = SessionUtils.getCurrentProject().getPId();
+        if (pId == null) {
+            AlertUtils.getError("Please select a project").show();
+            return;
+        }
         GenerateIDCardRequest generateIDCardRequest = new GenerateIDCardRequest(pId, uniqueIds);
         sendIDCardRequest(generateIDCardRequest);
         log.info("Sending GeneratedIDCard Request");
@@ -200,6 +204,9 @@ public class LandingPageController extends Controller {
 //            available.setLatestTime(new Timestamp(System.currentTimeMillis()));
 //            ds.createOrUpdate(available);
 //        }
+                        if (lblPrinter.getText() == null) {
+                            return;
+                        }
                         printerTask();
                     }
 
