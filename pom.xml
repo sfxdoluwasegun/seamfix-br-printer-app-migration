@@ -22,8 +22,8 @@
         <keystorePass>seamfixk0l0</keystorePass>
         <launch4j.output.file>${project.build.finalName}.exe</launch4j.output.file>
         <inno.compiler.file>${env.INNO_HOME}/ISCC.exe</inno.compiler.file>
-        <inno.br.ota.script>${env.BIOREGISTRA_OTA_HOME}/br-ota-update.iss</inno.br.ota.script>
-        <inno.br.installer.script>${env.BIOREGISTRA_INSTALLER_HOME}/br-installer.iss</inno.br.installer.script>
+        <inno.br.ota.script>${env.BIOREGISTRA_ID_CARD_OTA_HOME}/br-ota-update.iss</inno.br.ota.script>
+        <inno.br.installer.script>${env.BIOREGISTRA_ID_CARD_INSTALLER_HOME}/br-installer.iss</inno.br.installer.script>
         <location.folder.name>loclib</location.folder.name>
     </properties>
 
@@ -43,7 +43,7 @@
                         <configuration>
                             <files>
                                 <file>
-                                    ${project.basedir}/src/main/resources/com/seamfix/bioregistra/config/version.properties
+                                    ${project.basedir}/src/main/resources/com/seamfix/brprinterapp/config/version.properties
                                 </file>
                             </files>
                         </configuration>
@@ -152,7 +152,7 @@
                             <transformers>
                                 <transformer
                                         implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                    <mainClass>com.seamfix.bioregistra.App</mainClass>
+                                    <mainClass>com.seamfix.brprinterapp.App</mainClass>
                                 </transformer>
                             </transformers>
                         </configuration>
@@ -201,11 +201,11 @@
                         <option>-keep class com.seamfix.brprinterapp.pojo.** { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.model.** { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.controller.** { *; }</option>
-                        <option>-keep class com.seamfix.brprinterapp.service.BioRegistraClient { *; }</option>
+                        <option>-keep class com.seamfix.brprinterapp.service.BrPrinterClient { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.App { *; }</option>
                         <option>-keep class com.seamfix.brprinterapp.utils.BrThrowableRenderer { *; }</option>
-                        <option>-keep public enum com.seamfix.bioregistra.** { *; }</option>
-                        <option>-keep class !com.seamfix.bioregistra.** { *; }</option>
+                        <option>-keep public enum com.seamfix.brprinterapp.** { *; }</option>
+                        <option>-keep class !com.seamfix.brprinterapp.** { *; }</option>
 
                         <option>-keepattributes *Annotation*</option>
                         <option>-keepattributes Signature</option>
@@ -384,14 +384,6 @@
                             <artifactId>*</artifactId>
                         </exclusion>
                         <exclusion>
-                            <groupId>opencv</groupId>
-                            <artifactId>opencv</artifactId>
-                        </exclusion>
-                        <exclusion>
-                            <groupId>com.seamfix</groupId>
-                            <artifactId>sfx-opencv-validator</artifactId>
-                        </exclusion>
-                        <exclusion>
                             <groupId>com.sf.location</groupId>
                             <artifactId>CLocation.j4n</artifactId>
                         </exclusion>
@@ -468,7 +460,7 @@
                         </goals>
                         <configuration>
                             <icon>
-                                ${project.basedir}/src/main/resources/com/seamfix/bioregistra/img/application_icon-ico.ico
+                                ${project.basedir}/src/main/resources/com/seamfix/brprinterapp/img/application_icon-ico.ico
                             </icon>
                             <dontWrapJar>false</dontWrapJar>
                             <headerType>${launch4j.output.type}</headerType>
@@ -481,18 +473,17 @@
                                 http://www.oracle.com/technetwork/java/javase/downloads/jre8-downloads-2133155.html
                             </downloadUrl>
                             <classPath>
-                                <mainClass>com.seamfix.bioregistra.App</mainClass>
+                                <mainClass>com.seamfix.brprinterapp.App</mainClass>
                                 <addDependencies>false</addDependencies>
-                                <preCp>${location.folder.name}/jni4net.j-0.8.6.0.jar</preCp>
-                                <!--<jarLocation>lib/</jarLocation>-->
                             </classPath>
+
                             <jre>
                                 <jdkPreference>preferJre</jdkPreference>
                                 <runtimeBits>32</runtimeBits>
                                 <minVersion>1.8.0</minVersion>
                             </jre>
                             <singleInstance>
-                                <mutexName>BioRegistra</mutexName>
+                                <mutexName>BioPrinter</mutexName>
                             </singleInstance>
                         </configuration>
                     </execution>
@@ -503,7 +494,7 @@
 
         <filters>
             <filter>
-                ${project.basedir}/src/main/resources/com/seamfix/bioregistra/config/config-${build.profile.id}.properties
+                ${project.basedir}/src/main/resources/com/seamfix/brprinterapp/config/config-${build.profile.id}.properties
             </filter>
         </filters>
 
@@ -575,16 +566,6 @@
             <version>2.4</version>
         </dependency>
         <dependency>
-            <groupId>com.seamfix</groupId>
-            <artifactId>sfx-scanner-api</artifactId>
-            <version>2.1.5-final</version>
-        </dependency>
-        <dependency>
-            <groupId>com.github.sarxos</groupId>
-            <artifactId>webcam-capture</artifactId>
-            <version>0.3.11</version>
-        </dependency>
-        <dependency>
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-core</artifactId>
             <version>4.3.11.Final</version>
@@ -611,32 +592,20 @@
             <version>0.3</version>
         </dependency>
         <dependency>
-            <groupId>com.github.sarxos</groupId>
-            <artifactId>webcam-capture-driver-gstreamer</artifactId>
-            <version>0.3.10</version>
-        </dependency>
-        <dependency>
             <groupId>com.jcraft</groupId>
             <artifactId>jsch</artifactId>
             <version>0.1.53</version>
         </dependency>
         <dependency>
-            <groupId>opencv</groupId>
-            <artifactId>opencv</artifactId>
-            <version>3.2.0</version>
+            <groupId>com.sf.fargo</groupId>
+            <artifactId>fargojavaapi</artifactId>
+            <version>1.0</version>
         </dependency>
         <dependency>
-            <groupId>com.seamfix</groupId>
-            <artifactId>sfx-opencv-validator</artifactId>
-            <version>1.3.0-final</version>
-        </dependency>
-
-        <dependency>
-            <groupId>com.sf.location</groupId>
-            <artifactId>CLocation.j4n</artifactId>
+            <groupId>com.sf.fargo</groupId>
+            <artifactId>jna</artifactId>
             <version>1.0.0</version>
         </dependency>
-
     </dependencies>
 
     <!--PROFILES-->
@@ -684,13 +653,14 @@
                                     <fileSets>
                                         <fileSet>
                                             <sourceFile>${project.build.directory}/${launch4j.output.file}</sourceFile>
-                                            <destinationFile>${env.BIOREGISTRA_OTA_HOME}/app/${launch4j.output.file}
+                                            <destinationFile>
+                                                ${env.BIOREGISTRA_ID_CARD_INSTALLER_HOME}/app/${launch4j.output.file}
                                             </destinationFile>
                                         </fileSet>
                                         <fileSet>
                                             <sourceFile>${project.build.directory}/${launch4j.output.file}</sourceFile>
                                             <destinationFile>
-                                                ${env.BIOREGISTRA_INSTALLER_HOME}/app/${launch4j.output.file}
+                                                ${env.BIOREGISTRA_ID_CARD_OTA_HOME}/app/${launch4j.output.file}
                                             </destinationFile>
                                         </fileSet>
                                     </fileSets>

@@ -9,9 +9,11 @@
 .jfx-check-box {
     -jfx-checked-color: #58acdd;
 }
+
 .jfx-text-area {
     -jfx-focus-color: #58acdd;
 }
+
 .jfx-radio-button {
     -jfx-selected-color: #58acdd;
 }
@@ -40,15 +42,15 @@
     -fx-background-color: white;
 }
 
-.login-container .jfx-button {
+.jfx-button {
     -fx-background-color: #58acdd;
+    -fx-text-fill: white;
 }
 
 .vbox-single-control {
     -fx-border-color: lightgrey;
     -fx-border-radius: 5px;
 }
-
 
 .btn-primary {
     -fx-background-color: #58acdd;

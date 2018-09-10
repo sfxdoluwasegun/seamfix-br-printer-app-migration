@@ -1,58 +1,69 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-
-<?import com.jfoenix.controls.JFXComboBox?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.control.TextArea?>
-<BorderPane prefHeight="350.0" prefWidth="400.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.111"
-            xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.seamfix.brprinterapp.controller.LandingPageController">
+<BorderPane fx:id="root" prefHeight="350.0" prefWidth="450.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seamfix.brprinterapp.controller.LandingPageController">
     <top>
         <AnchorPane>
             <children>
+
                 <HBox spacing="5.0" AnchorPane.leftAnchor="5.0">
                     <children>
-                        <Label fx:id="lblPrinter" prefHeight="25.0" maxWidth="-Infinity" text="Printer Name"/>
-                        <JFXButton fx:id="btnChange" prefHeight="25.0" maxWidth="-Infinity" text="Change"/>
+                        <Label fx:id="lblPrinter" maxWidth="-Infinity" prefHeight="25.0" text="Printer Name" />
+                        <JFXButton fx:id="btnChange" maxWidth="-Infinity" onAction="#changePrinter" prefHeight="25.0" text="Change" />
                     </children>
+               <padding>
+                  <Insets top="5.0" />
+               </padding>
                 </HBox>
-                <JFXComboBox fx:id="projectsCombo" layoutX="19.0" prefHeight="30.0" prefWidth="126.0"
-                             promptText="-- Select Project --" AnchorPane.rightAnchor="10.0"/>
+                <HBox AnchorPane.rightAnchor="10.0">
+                    <JFXComboBox fx:id="projectsCombo" prefHeight="30.0" prefWidth="126.0" promptText="-- Select Project --">
+                  <HBox.margin>
+                     <Insets top="-10.0" />
+                  </HBox.margin></JFXComboBox>
+                    <ImageView fx:id="logoutImage" fitHeight="30.0" fitWidth="20" pickOnBounds="true" preserveRatio="true"/>
+               <padding>
+                  <Insets top="10.0" />
+               </padding>
+                </HBox>
+
             </children>
         </AnchorPane>
     </top>
     <bottom>
-        <JFXButton fx:id="btnSend" BorderPane.alignment="BOTTOM_RIGHT" prefHeight="25.0" prefWidth="100.0"
-                   text="%Landing.btnSend.text" onAction="#sendToPrinter" >
-                <BorderPane.margin>
-                    <Insets right="5.0"/>
-                </BorderPane.margin>
-        </JFXButton>
+        <HBox alignment="CENTER" spacing="0.0" BorderPane.alignment="CENTER">
+            <children>
+                <JFXButton fx:id="btnSend" onAction="#sendToPrinter" prefHeight="25.0" prefWidth="100.0" text="%Landing.btnSend.text" />
+
+                <ImageView fx:id="imgStatus" fitHeight="25.0" fitWidth="43.0" pickOnBounds="true" preserveRatio="true" />
+            </children>
+        </HBox>
     </bottom>
     <center>
         <VBox fx:id="vboxSysIDs" spacing="13.0" BorderPane.alignment="CENTER">
             <children>
-                <Label fx:id="lblPrint"  prefHeight="25.0" text="%Landing.lblPrint.text" alignment="CENTER_LEFT">
-                        <VBox.margin>
-                            <Insets top="15"/>
-                        </VBox.margin>
+                <Label fx:id="lblPrint" alignment="CENTER_LEFT" prefHeight="25.0" text="%Landing.lblPrint.text">
+                    <VBox.margin>
+                        <Insets top="15" />
+                    </VBox.margin>
                 </Label>
-                <TextArea fx:id="txtEnterSysIds" prefHeight="250.0" prefWidth="370.0" promptText="%Landing.txtEnterSysIds.text" />
+                <TextArea fx:id="txtEnterSysIds" style="-fx-font-size: 20px" prefHeight="250.0" prefWidth="370.0" promptText="%Landing.txtEnterSysIds.text" />
             </children>
             <padding>
-                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0"/>
+                <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
             </padding>
         </VBox>
     </center>
     <padding>
-        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0"/>
+        <Insets bottom="10.0" left="15.0" right="15.0" top="10.0" />
     </padding>
 </BorderPane>
-

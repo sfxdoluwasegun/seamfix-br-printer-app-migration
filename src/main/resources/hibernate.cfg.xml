@@ -13,5 +13,9 @@
         <property name="format_sql">true</property>
 
         <mapping class="com.seamfix.brprinterapp.model.Config"/>
+        <mapping class="com.seamfix.brprinterapp.model.Tag"/>
+        <mapping class="com.seamfix.brprinterapp.model.Project"/>
+        <mapping class="com.seamfix.brprinterapp.model.BioUser"/>
+        <mapping class="com.seamfix.brprinterapp.model.IdCard"/>
     </session-factory>
 </hibernate-configuration>
