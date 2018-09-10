@@ -18,7 +18,7 @@ import javax.persistence.Entity;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class Config extends BaseEnitiy {
+public class Config extends BaseEntity {
 
     @Column(unique = true)
     private  String configKey;
