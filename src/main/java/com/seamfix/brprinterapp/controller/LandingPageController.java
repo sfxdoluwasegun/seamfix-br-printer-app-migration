@@ -78,10 +78,12 @@ public class LandingPageController extends Controller {
         logoutImage.setOnMouseClicked(event -> performLogout());
         images = new File("printImages");
         images.mkdirs();
+
     }
 
 
     public void sendToPrinter(ActionEvent actionEvent) {
+        lblPrint.setText("");
         btnSend.setDisable(true);
         String systemIds = txtEnterSysIds.getText();
         systemIds = systemIds.trim();
@@ -135,6 +137,7 @@ public class LandingPageController extends Controller {
                 imgStatus.setImage(ImageHelper.getErrorImage());
                 log.error("Error with login", exceptionProperty().getValue());
                 AlertUtils.getConfirm("You require a working internet connection to login").showAndWait();
+                lblPrint.setText(getString("Landing.lblPrint.text"));
             }
 
             @Override
@@ -262,7 +265,8 @@ public class LandingPageController extends Controller {
         Runnable runnable = () -> PrinterClass.startPrinting(lblPrinter.getText());
 
         log.info("Started print task");
-        new Thread(runnable).start();
+        Thread pThread = new Thread(runnable);
+        pThread.start();
     }
 
     public void setSelectedPrinterName(String printerName) {
