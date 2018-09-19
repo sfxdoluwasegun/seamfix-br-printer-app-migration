@@ -5,7 +5,6 @@ import com.jfoenix.controls.JFXComboBox;
 import com.seamfix.brprinterapp.FargoPrinter.PrinterClass;
 import com.seamfix.brprinterapp.gui.BioPrinterDialog;
 import com.seamfix.brprinterapp.model.BioUser;
-import com.seamfix.brprinterapp.model.IdCard;
 import com.seamfix.brprinterapp.model.Project;
 import com.seamfix.brprinterapp.pojo.GenerateIDCard;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
@@ -40,7 +39,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-import java.util.stream.Stream;
 
 @Log4j
 public class LandingPageController extends Controller {
