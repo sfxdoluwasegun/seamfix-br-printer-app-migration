@@ -13,12 +13,12 @@
 <?import javafx.scene.layout.Region?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="200.0" prefWidth="350.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seamfix.brprinterapp.controller.SignInController">
+<BorderPane prefHeight="220.0" prefWidth="380.0" styleClass="login-container" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.seamfix.brprinterapp.controller.SignInController">
     <top>
         <VBox alignment="CENTER" BorderPane.alignment="CENTER">
             <children>
                 <Label fx:id="lblSignIn" alignment="CENTER" prefHeight="34.0" text="%LoginStage.lblSignInInstruction.text" textAlignment="JUSTIFY" wrapText="true" />
-                <Label fx:id="lblMessage" alignment="CENTER" prefHeight="34.0" style="-fx-text-fill: #58acdd; -fx-font-weight: 600" textAlignment="CENTER" wrapText="true" />
+                <Label fx:id="lblMessage" alignment="CENTER" prefHeight="51.0" style="-fx-text-fill: #58acdd; -fx-font-weight: 600" textAlignment="CENTER" wrapText="true" />
             </children>
             <BorderPane.margin>
                 <Insets top="5.0" />
@@ -30,7 +30,7 @@
         <HBox BorderPane.alignment="CENTER">
             <children>
                 <Label fx:id="lblVendor" alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="143.0" text="%LoginStage.lblPoweredBy.text" />
-                <Region prefHeight="0.0" prefWidth="174.0" />
+                <Region prefHeight="0.0" prefWidth="194.0" />
 
                 <Label fx:id="lblVersion" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="23.0" />
 
@@ -45,13 +45,13 @@
             <children>
                 <HBox>
                     <children>
-                        <Label fx:id="lblEmail" prefHeight="25.0" prefWidth="60" text="%LoginStage.txtEmail.promptText" />
+                        <Label fx:id="lblEmail" prefHeight="25.0" prefWidth="80" text="%LoginStage.txtEmail.promptText" />
                         <JFXTextField fx:id="txtUsername" prefHeight="25.0" prefWidth="222.0" />
                     </children>
                 </HBox>
                 <HBox>
                     <children>
-                        <Label fx:id="lblPassword" prefHeight="25.0" prefWidth="60" text="%LoginStage.txtPassword.promptText" />
+                        <Label fx:id="lblPassword" prefHeight="25.0" prefWidth="80" text="%LoginStage.txtPassword.promptText" />
                         <JFXPasswordField fx:id="txtPassword" prefHeight="25.0" prefWidth="222.0" />
                     </children>
                 </HBox>

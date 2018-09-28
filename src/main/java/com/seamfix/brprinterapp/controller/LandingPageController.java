@@ -109,6 +109,7 @@ public class LandingPageController extends Controller {
             btnSend.setDisable(false);
             return;
         }
+
         String pId = SessionUtils.getCurrentProject().getPId();
         GenerateIDCardRequest generateIDCardRequest = new GenerateIDCardRequest(pId, uniqueIds);
         sendIDCardRequest(generateIDCardRequest);
@@ -260,11 +261,19 @@ public class LandingPageController extends Controller {
     }
 
     private void printerTask() {
-        Runnable runnable = () -> PrinterClass.startPrinting(lblPrinter.getText());
+        Runnable runnable = () -> {
+            PrinterClass.startPrinting(lblPrinter.getText());
+        };
 
         log.info("Started print task");
         Thread pThread = new Thread(runnable);
         pThread.start();
+        try {
+            pThread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void setSelectedPrinterName(String printerName) {

@@ -11,7 +11,7 @@ public class PrinterClass {
 
     }
 
-    public static void startPrinting(String printerName) {
+    public static synchronized void startPrinting(String printerName) {
         // Make first thread
         MakeCardOperation m_makeCard1;
 
