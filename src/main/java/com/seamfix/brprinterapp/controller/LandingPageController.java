@@ -102,14 +102,32 @@ public class LandingPageController extends Controller {
         if (uniqueIds.size() == 0) {
             uniqueIds = null;
         }
-
         Project currentProject = SessionUtils.getCurrentProject();
         if (currentProject == null) {
             AlertUtils.getError("Please select a project").show();
             btnSend.setDisable(false);
             return;
         }
+        Boolean allowsIdCard = currentProject.getAllowPrintIdCard();
+        if (allowsIdCard ==  null || allowsIdCard == false) {
+            AlertUtils.getError(getString("Landing.error.unconfiguredProject")).show();
+            btnSend.setDisable(false);
+            return;
+        }
+        if (uniqueIds == null) {
+            ButtonType proceed = new ButtonType("Proceed");
+            ButtonType cancel = new ButtonType("Cancel");
 
+            String message = getString("Landing.confirm.printAllIdCardsInProject");
+
+            Alert confirm = AlertUtils.getConfirm(message, new ButtonType[]{proceed, cancel});
+            Optional<ButtonType> buttonType = confirm.showAndWait();
+            if (buttonType.get() == cancel) {
+                btnSend.setDisable(false);
+                return;
+            }
+
+        }
         String pId = SessionUtils.getCurrentProject().getPId();
         GenerateIDCardRequest generateIDCardRequest = new GenerateIDCardRequest(pId, uniqueIds);
         sendIDCardRequest(generateIDCardRequest);
@@ -196,6 +214,9 @@ public class LandingPageController extends Controller {
                         } catch (Exception e) {
                             log.info(e.getMessage());
                         }
+                        /*
+                        This was intended to persist already printed ID Cards in the local database
+                         */
 //        DataService ds = DataService.getInstance();
 //        String sysGenId = response.getSystemGeneratedId;
 //        IdCard available = ds.getIdCardByGenId(sysGenId);
@@ -219,7 +240,7 @@ public class LandingPageController extends Controller {
                 }
                 imgStatus.setImage(ImageHelper.getOKImage());
             } else {
-                AlertUtils.getError("We are sorry about this but we are working on this service right now. Please try again later.").show();
+//                AlertUtils.getError("We are sorry about this but we are working on this service right now. Please try again later.").show();
                 imgStatus.setImage(ImageHelper.getErrorImage());
                 return;
             }
