@@ -214,21 +214,7 @@ public class LandingPageController extends Controller {
                         } catch (Exception e) {
                             log.info(e.getMessage());
                         }
-                        /*
-                        This was intended to persist already printed ID Cards in the local database
-                         */
-//        DataService ds = DataService.getInstance();
-//        String sysGenId = response.getSystemGeneratedId;
-//        IdCard available = ds.getIdCardByGenId(sysGenId);
 
-//        if (available == null) {
-//            available = new IdCard(sysGenId, new Timestamp(System.currentTimeMillis()), 1);
-//            DataService.getInstance().create(available);
-//        } else {
-//            available.setTimesPrinted(1 + available.getTimesPrinted());
-//            available.setLatestTime(new Timestamp(System.currentTimeMillis()));
-//            ds.createOrUpdate(available);
-//        }
                         if (lblPrinter.getText() == null) {
                             AlertUtils.getError("Please type in the printer's name. You can do that with the change button just above the text area").show();
                             imgStatus.setImage(ImageHelper.getErrorImage());
@@ -240,7 +226,6 @@ public class LandingPageController extends Controller {
                 }
                 imgStatus.setImage(ImageHelper.getOKImage());
             } else {
-//                AlertUtils.getError("We are sorry about this but we are working on this service right now. Please try again later.").show();
                 imgStatus.setImage(ImageHelper.getErrorImage());
                 return;
             }
