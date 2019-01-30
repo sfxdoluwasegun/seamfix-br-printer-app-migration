@@ -27,7 +27,7 @@ import java.util.concurrent.TimeUnit;
 public class HttpClient {
 
     private Integer connectTimeOutInSeconds = 60;
-    private Integer readTimeoutInSeconds = 30;
+    private Integer readTimeoutInSeconds = 60;
     private static final String BASE_ENDPOINT = "/br/";
     private static SSLContext sslContext;
 
