@@ -10,7 +10,7 @@
     app version is obtained from a version.properties file using properties-maven-plugin
     this is so that there only one location for the application's version.
     -->
-    <version>${bioreg.app.version}-SNAPSHOT</version>
+    <version>${bioreg.app.version}-FINAL</version>
 
     <properties>
         <!--obtained from app version in version.properties file-->
