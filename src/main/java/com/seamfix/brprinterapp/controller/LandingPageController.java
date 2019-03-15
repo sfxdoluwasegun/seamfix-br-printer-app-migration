@@ -5,7 +5,6 @@ import com.jfoenix.controls.JFXComboBox;
 import com.seamfix.brprinterapp.FargoPrinter.PrinterClass;
 import com.seamfix.brprinterapp.gui.BioPrinterDialog;
 import com.seamfix.brprinterapp.model.BioUser;
-import com.seamfix.brprinterapp.model.IdCard;
 import com.seamfix.brprinterapp.model.Project;
 import com.seamfix.brprinterapp.pojo.GenerateIDCard;
 import com.seamfix.brprinterapp.pojo.rest.GenerateIDCardRequest;
@@ -40,7 +39,6 @@ import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.*;
-import java.util.stream.Stream;
 
 @Log4j
 public class LandingPageController extends Controller {
@@ -78,10 +76,12 @@ public class LandingPageController extends Controller {
         logoutImage.setOnMouseClicked(event -> performLogout());
         images = new File("printImages");
         images.mkdirs();
+
     }
 
 
     public void sendToPrinter(ActionEvent actionEvent) {
+        lblPrint.setText("");
         btnSend.setDisable(true);
         String systemIds = txtEnterSysIds.getText();
         systemIds = systemIds.trim();
@@ -102,12 +102,31 @@ public class LandingPageController extends Controller {
         if (uniqueIds.size() == 0) {
             uniqueIds = null;
         }
-
         Project currentProject = SessionUtils.getCurrentProject();
         if (currentProject == null) {
             AlertUtils.getError("Please select a project").show();
             btnSend.setDisable(false);
             return;
+        }
+        Boolean allowsIdCard = currentProject.getAllowPrintIdCard();
+        if (allowsIdCard ==  null || allowsIdCard == false) {
+            AlertUtils.getError(getString("Landing.error.unconfiguredProject")).show();
+            btnSend.setDisable(false);
+            return;
+        }
+        if (uniqueIds == null) {
+            ButtonType proceed = new ButtonType("Proceed");
+            ButtonType cancel = new ButtonType("Cancel");
+
+            String message = getString("Landing.confirm.printAllIdCardsInProject");
+
+            Alert confirm = AlertUtils.getConfirm(message, new ButtonType[]{proceed, cancel});
+            Optional<ButtonType> buttonType = confirm.showAndWait();
+            if (buttonType.get() == cancel) {
+                btnSend.setDisable(false);
+                return;
+            }
+
         }
         String pId = SessionUtils.getCurrentProject().getPId();
         GenerateIDCardRequest generateIDCardRequest = new GenerateIDCardRequest(pId, uniqueIds);
@@ -135,6 +154,7 @@ public class LandingPageController extends Controller {
                 imgStatus.setImage(ImageHelper.getErrorImage());
                 log.error("Error with login", exceptionProperty().getValue());
                 AlertUtils.getConfirm("You require a working internet connection to login").showAndWait();
+                lblPrint.setText(getString("Landing.lblPrint.text"));
             }
 
             @Override
@@ -194,18 +214,7 @@ public class LandingPageController extends Controller {
                         } catch (Exception e) {
                             log.info(e.getMessage());
                         }
-//        DataService ds = DataService.getInstance();
-//        String sysGenId = response.getSystemGeneratedId;
-//        IdCard available = ds.getIdCardByGenId(sysGenId);
 
-//        if (available == null) {
-//            available = new IdCard(sysGenId, new Timestamp(System.currentTimeMillis()), 1);
-//            DataService.getInstance().create(available);
-//        } else {
-//            available.setTimesPrinted(1 + available.getTimesPrinted());
-//            available.setLatestTime(new Timestamp(System.currentTimeMillis()));
-//            ds.createOrUpdate(available);
-//        }
                         if (lblPrinter.getText() == null) {
                             AlertUtils.getError("Please type in the printer's name. You can do that with the change button just above the text area").show();
                             imgStatus.setImage(ImageHelper.getErrorImage());
@@ -217,10 +226,10 @@ public class LandingPageController extends Controller {
                 }
                 imgStatus.setImage(ImageHelper.getOKImage());
             } else {
-                AlertUtils.getError("We are sorry about this but we are working on this service right now. Please try again later.").show();
                 imgStatus.setImage(ImageHelper.getErrorImage());
                 return;
             }
+
 
 
         }
@@ -259,10 +268,19 @@ public class LandingPageController extends Controller {
     }
 
     private void printerTask() {
-        Runnable runnable = () -> PrinterClass.startPrinting(lblPrinter.getText());
+        Runnable runnable = () -> {
+            PrinterClass.startPrinting(lblPrinter.getText());
+        };
 
         log.info("Started print task");
-        new Thread(runnable).start();
+        Thread pThread = new Thread(runnable);
+        pThread.start();
+        try {
+            pThread.sleep(10000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
     }
 
     public void setSelectedPrinterName(String printerName) {
