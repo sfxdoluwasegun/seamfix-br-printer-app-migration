@@ -74,6 +74,9 @@ public class ServiceGenerator {
     }
 
     public String constructUrl() {
+        if (StringUtils.equalsIgnoreCase(httpIp, "test.bioregistra.com")) {
+            return StringUtils.isBlank(customUrl) ? (connectionType + "://" + httpIp + "") : customUrl;
+        }
         return StringUtils.isBlank(customUrl) ? (connectionType + "://" + httpIp + ":" + httpPort) : customUrl;
     }
 }
